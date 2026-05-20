@@ -6,7 +6,7 @@
 /*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 13:29:51 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/20 10:53:10 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/20 13:56:01 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static int	ft_duplicate(int *array, int size, int value)
 	return (0);
 }
 
-int	*parse_args(char **args, int count, int *size)
+t_node	*parse_args(char **args, int count, int *size)
 {
 	int		*array;
 	long	val;
