@@ -6,7 +6,7 @@
 /*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 13:29:51 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/20 09:11:19 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/20 10:53:10 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	*parse_args(char **args, int count, int *size)
 		if (!ft_valid_int(args[i]))
 			return (free(array), NULL);
 		val = ft_atol(args[i]);
-		if (val > INT_MAX || val == INT_MIN)
+		if (val > INT_MAX || val < INT_MIN)
 			return(free(array), NULL);
 		if (ft_duplicate(array, i, (int)val))
 			return (free(array), NULL);
