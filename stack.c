@@ -6,7 +6,7 @@
 /*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 15:30:24 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/20 16:56:21 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/20 17:31:11 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,20 @@ t_node	*ft_new_node(int value)
 	return (node);
 }
 
+t_node	ft_add_botom(t_node **list, t_node *new)
+{
+	t_node	*n1;
+
+	if (!new)
+		return (NULL);
+	if (!*list)
+	{
+		*list = new;
+		return (NULL);
+	}
+	n1 = /* tem que fazer o listlast aqui */
+}
+
 t_stack *ft_init_stack(int *array, int size)
 {
 	t_stack	*stack;
@@ -40,6 +54,8 @@ t_stack *ft_init_stack(int *array, int size)
 	i = 0;
 	while (i < size -1)
 	{
+		while (array[i])
+			ft_new_node(array[i]);
 		
 	}
 }
