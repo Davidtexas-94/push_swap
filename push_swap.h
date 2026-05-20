@@ -6,7 +6,7 @@
 /*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 16:49:08 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/20 16:11:23 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/21 00:05:14 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,9 @@ typedef struct s_stack
 
 //PARSE FUNCTIONS===============================================================
 t_node		*parse_args(char **args, int count, int *size);
+
+//STACK FUNCTIONS===============================================================
+static t_node	ft_add_botom(t_node **list, t_node *new);
 
 //ATOL FUNCTION=================================================================
 long long	ft_atol(const char *str);
