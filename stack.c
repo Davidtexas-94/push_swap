@@ -6,7 +6,7 @@
 /*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 15:30:24 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/20 16:07:13 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/20 16:56:21 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,17 @@ t_node	*ft_new_node(int value)
 
 t_stack *ft_init_stack(int *array, int size)
 {
-	
+	t_stack	*stack;
+	int		i;
+
+	stack = malloc(sizeof(t_stack));
+	if (!stack)
+		return (NULL);
+	stack->top = NULL;
+	stack->size = 0;
+	i = 0;
+	while (i < size -1)
+	{
+		
+	}
 }
