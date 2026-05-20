@@ -6,13 +6,13 @@
 /*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 17:40:07 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/19 19:20:11 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/20 16:10:18 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_atol(const char *str)
+long long	ft_atol(const char *str)
 {
 	long long	i;
 	long long	res;
