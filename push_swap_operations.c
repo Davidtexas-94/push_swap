@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations.c                                       :+:      :+:    :+:   */
+/*   push_swap_operations.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 14:02:39 by dserra-d          #+#    #+#             */
-/*   Updated: 2026/05/21 15:15:12 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/21 15:30:17 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void    sa(t_stack *a)
     second->prev = NULL;
     second->next = first;
     first->prev = second;
-    write(1, "sa\n", 3);
+    write (1, "sa\n", 3);
 }
 
 void    sb(t_stack *b)
@@ -41,7 +41,7 @@ void    sb(t_stack *b)
     second->prev = NULL;
     second->next = first;
     first->prev = second;
-    write(1, "sb\n", 3); 
+    write (1, "sb\n", 3); 
 }
 
 void    ss(t_stack *a, t_stack *b)
@@ -65,7 +65,7 @@ void    ss(t_stack *a, t_stack *b)
     second_b->prev = NULL;
     second_b->next = first_b;
     first_b->prev = second_b;
-    write(1, "ss\n", 3);
+    write (1, "ss\n", 3);
 }
 
 void    pa(t_stack *a, t_stack *b)
@@ -117,5 +117,5 @@ void    pb(t_stack *a, t_stack *b)
         a->bottom = NULL;
     if (b->size == 1)
         b->bottom = first_a;
-    write(1, "pb\n", 3); 
+    write (1, "pb\n", 3); 
 }
