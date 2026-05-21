@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 16:49:08 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/21 12:59:26 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/21 15:18:01 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct s_node
 typedef struct s_stack
 {
 	t_node	*top;
+	t_node	*bottom;
 	int		size;
 }	t_stack;
 
@@ -41,5 +42,13 @@ void	ft_free_stack(t_stack *stack);
 
 //ATOL FUNCTION=================================================================
 long long	ft_atol(const char *str);
+
+//OPERATIONS FUNCTIONS==========================================================
+
+void    sa(t_stack *a);
+void    sb(t_stack *b);
+void    ss(t_stack *a, t_stack *b);
+void    pa(t_stack *a, t_stack *b);
+void    pb(t_stack *a, t_stack *b);
 
 #endif
