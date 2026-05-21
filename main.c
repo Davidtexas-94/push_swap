@@ -6,7 +6,7 @@
 /*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 12:11:34 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/21 13:33:28 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/21 14:16:05 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,38 +48,39 @@ static int  ft_count_args(int argc, char **argv)
 static char	**ft_get_args(int argc, char **argv, int *size)
 {
 	int		i;
-	char	**args;
-	char	*str;
+	int		j;
+	int		k;
+	char	**final_array;
+	char	**split;
 
-	i = 0;
-	while (argv[i] < argc -1)
+	*size = ft_count_args(argc, argv);
+	final_array = malloc(sizeof(char **) * *size + 1);
+	if (!final_array)
+		return (NULL);
+	k = 0;
+	i = 1;
+	while (i < argc)
 	{
-		args = ft_split(argv[i], ' ');
-		size = ++i;
+		split = ft_split(argv[i], ' ');
+		j = 0;
+		while (split[j])
+			final_array[k++] = split[j++];
+		free(split);
+		i++;
 	}
-	str = malloc(sizeof(char **) * *args[i] + 1);
-	i = 0;
-	while ()
+	final_array[k] = NULL;
+	return (final_array);
 }
 
 int	main(int argc, char **argv)
 {
-	int		*values;
-	int		size;
-	int		i;
-	char	**args;
-
-	i = 0;
-	while (argv[i])
-		args = ft_split(argv[1], ' ');
-	size = 0;
-	while (args[size])
-		size++;
-	if (size == 0)
-		return (0);
-	values = parse_args(args, size, &size);
-	if (!values)
-		error();
-	free(values);
-	return (0);
+/* se argc < 2 → return 0
+args = ft_get_args(argc, argv, &size)
+se args NULL → error()
+values = parse_args(args, size, &size)
+se values NULL → error() (liberta args antes)
+stack_a = ft_init_stack(values, size)
+stack_b = ft_init_stack vazio
+liberta values
+liberta args */
 }
