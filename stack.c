@@ -6,7 +6,7 @@
 /*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 15:30:24 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/21 12:16:49 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/21 12:59:07 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,23 @@ static void	ft_add_botom(t_node **list, t_node *new)
 	n1 = *list;
 	while (n1->next)
 		n1 = n1->next;
-	n1->next = next;
+	n1->next = new;
 	new->prev = n1;
+}
+
+void	ft_free_stack(t_stack *stack)
+{
+	t_node	*temp;
+	t_node	*current;
+
+	current = stack->top;
+	while (current)
+	{
+		temp = current->next;
+		free(current);
+		current = temp;
+	}
+	free(stack);
 }
 
 t_stack *ft_init_stack(int *array, int size)

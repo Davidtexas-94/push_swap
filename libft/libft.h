@@ -95,11 +95,11 @@ int		ft_print_ptr(void *ptr);
 int		ft_print_specs(char x, va_list args);
 //END PRINTF FUNCTIONS==========================================================
 
-//GET NEXT LINE FUNCTIONS
+//GET NEXT LINE FUNCTIONS=======================================================
 char	*get_next_line(int fd);
 char	*read_until(int fd, char *buffer, char *remi);
 char	*extr_line(char *remind);
 char	*updt_reminder(char *remin);
-//END GET NEXT LINE FUNCTIONS
+//END GET NEXT LINE FUNCTIONS===================================================
 
 #endif
