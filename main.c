@@ -6,7 +6,7 @@
 /*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 12:11:34 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/21 14:16:05 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/21 23:51:45 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,9 @@ static char	**ft_get_args(int argc, char **argv, int *size)
 
 int	main(int argc, char **argv)
 {
-/* se argc < 2 → return 0
+	char	*args;
+
+/*	if (argc < 2)
 args = ft_get_args(argc, argv, &size)
 se args NULL → error()
 values = parse_args(args, size, &size)

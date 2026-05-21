@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 16:49:08 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/21 15:31:30 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/21 23:46:59 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,10 @@ void	ft_free_stack(t_stack *stack);
 long long	ft_atol(const char *str);
 
 //OPERATIONS FUNCTIONS==========================================================
-
-void    sa(t_stack *a);
-void    sb(t_stack *b);
-void    ss(t_stack *a, t_stack *b);
-void    pa(t_stack *a, t_stack *b);
-void    pb(t_stack *a, t_stack *b);
+void	sa(t_stack *a);
+void	sb(t_stack *b);
+void	ss(t_stack *a, t_stack *b);
+void	pa(t_stack *a, t_stack *b);
+void	pb(t_stack *a, t_stack *b);
 
 #endif
