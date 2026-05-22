@@ -6,7 +6,7 @@
 /*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 15:18:24 by dserra-d          #+#    #+#             */
-/*   Updated: 2026/05/22 09:44:34 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/22 11:27:31 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	ft_ra(t_stack *a)
 {
-	t_node *old_top;
-	t_node *old_bottom;
+	t_node	*old_top;
+	t_node	*old_bottom;
 
 	if (!a || a->size <= 1)
-		return;
+		return ;
 	old_top = a->top;
 	a->top = old_top->next;
 	old_bottom = a->bottom;
@@ -31,8 +31,8 @@ void	ft_ra(t_stack *a)
 
 void	ft_rb(t_stack *b)
 {
-	t_node *old_top;
-	t_node *old_bottom;
+	t_node	*old_top;
+	t_node	*old_bottom;
 
 	if (!b || b->size <= 1)
 		return ;
@@ -48,19 +48,19 @@ void	ft_rb(t_stack *b)
 
 void	ra(t_stack *a)
 {
-	ft_ra(a);
+	ft_ra (a);
 	write (1, "ra\n", 3);
 }
 
 void	rb(t_stack *b)
 {
-	ft_rb(b);
+	ft_rb (b);
 	write (1, "rb\n", 3);
 }
 
 void	rr(t_stack *a, t_stack *b)
 {
-	ft_ra(a);
-	ft_rb(b);
+	ft_ra (a);
+	ft_rb (b);
 	write (1, "rr\n", 3);
 }

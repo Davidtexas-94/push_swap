@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_operations.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 14:02:39 by dserra-d          #+#    #+#             */
-/*   Updated: 2026/05/21 23:46:10 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/22 11:33:04 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	sa(t_stack *a)
 {
-	t_node *first;
-	t_node *second;
+	t_node	*first;
+	t_node	*second;
 
 	if (!a || a->size <= 1)
 		return ;
@@ -30,10 +30,10 @@ void	sa(t_stack *a)
 
 void	sb(t_stack *b)
 {
-	t_node *first;
-	t_node *second;
+	t_node	*first;
+	t_node	*second;
 
-	if(!b || b->size <= 1)
+	if (!b || b->size <= 1)
 		return ;
 	first = b->top;
 	second = b->top->next;
@@ -41,15 +41,15 @@ void	sb(t_stack *b)
 	second->prev = NULL;
 	second->next = first;
 	first->prev = second;
-	write (1, "sb\n", 3); 
+	write (1, "sb\n", 3);
 }
 
 void	ss(t_stack *a, t_stack *b)
 {
-	t_node *first_a;
-	t_node *second_a;
-	t_node *first_b;
-	t_node *second_b;
+	t_node	*first_a;
+	t_node	*second_a;
+	t_node	*first_b;
+	t_node	*second_b;
 
 	if (!a || !b || a->size <= 1 || b->size <= 1)
 		return ;
@@ -70,8 +70,8 @@ void	ss(t_stack *a, t_stack *b)
 
 void	pa(t_stack *a, t_stack *b)
 {
-	t_node *first_b;
-	t_node *first_a;
+	t_node	*first_b;
+	t_node	*first_a;
 
 	if (!a || !b || b->size == 0)
 		return ;
@@ -96,8 +96,8 @@ void	pa(t_stack *a, t_stack *b)
 
 void	pb(t_stack *a, t_stack *b)
 {
-	t_node *first_a;
-	t_node *first_b;
+	t_node	*first_a;
+	t_node	*first_b;
 
 	if (!a || !b || a->size == 0)
 		return ;
@@ -117,5 +117,5 @@ void	pb(t_stack *a, t_stack *b)
 		a->bottom = NULL;
 	if (b->size == 1)
 		b->bottom = first_a;
-	write (1, "pb\n", 3); 
+	write (1, "pb\n", 3);
 }

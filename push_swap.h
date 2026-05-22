@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 16:49:08 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/22 10:45:39 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/22 11:34:00 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ t_node		*parse_args(char **args, int count, int *size);
 void		ft_free_stack(t_stack *stack);
 t_stack		*ft_init_stack(int *array, int size);
 
-//UTILS FUNCTION=================================================================
+//UTILS FUNCTION================================================================
 long long	ft_atol(const char *str);
 
 //OPERATIONS FUNCTIONS==========================================================
@@ -60,5 +60,12 @@ void		ft_rrb(t_stack *b);
 void		rra(t_stack *a);
 void		rrb(t_stack *b);
 void		rrr(t_stack *a, t_stack *b);
+
+//ALGORITHM FUNCTIONS==========================================================
+float		calculate_disorder(t_stack *a);
+void		move_biggest_top(t_stack *a);
+int			biggest_number(t_stack *a);
+void		sort_simple(t_stack *a, t_stack *b);
+
 
 #endif
