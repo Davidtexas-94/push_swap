@@ -6,7 +6,7 @@
 /*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 15:30:24 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/21 12:59:07 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/22 11:59:33 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,20 @@ void	ft_free_stack(t_stack *stack)
 	free(stack);
 }
 
-t_stack *ft_init_stack(int *array, int size)
+t_stack	*ft_init_empty(void)
+{
+	t_stack	*empty;
+
+	empty = malloc(sizeof(t_stack));
+	if (!empty)
+		return (NULL);
+	empty->top = NULL;
+	empty->bottom = NULL;
+	empty->size = 0;
+	return (empty);
+}
+
+t_stack	*ft_init_stack(int *array, int size)
 {
 	t_stack	*stack;
 	int		i;
@@ -70,6 +83,7 @@ t_stack *ft_init_stack(int *array, int size)
 	if (!stack)
 		return (NULL);
 	stack->top = NULL;
+	stack->bottom = NULL;
 	stack->size = 0;
 	i = 0;
 	while (i < size)

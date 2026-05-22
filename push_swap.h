@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 16:49:08 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/22 11:34:00 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/22 12:17:30 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 //INCLUDES======================================================================
 # include "libft.h"
-# include <unistd.h>
 
 //STRUCTS=======================================================================
 typedef struct s_node
@@ -35,14 +34,16 @@ typedef struct s_stack
 }	t_stack;
 
 //PARSE FUNCTIONS===============================================================
-t_node		*parse_args(char **args, int count, int *size);
+int		*parse_args(char **args, int count, int *size);
 
 //STACK FUNCTIONS===============================================================
 void		ft_free_stack(t_stack *stack);
 t_stack		*ft_init_stack(int *array, int size);
+t_stack		*ft_init_empty(void);
 
 //UTILS FUNCTION================================================================
 long long	ft_atol(const char *str);
+void		ft_free_args(char **args);
 
 //OPERATIONS FUNCTIONS==========================================================
 void		sa(t_stack *a);

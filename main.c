@@ -6,7 +6,7 @@
 /*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 12:11:34 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/22 10:09:48 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/22 12:04:35 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,18 +72,6 @@ static char	**ft_get_args(int argc, char **argv, int *size)
 	return (final_array);
 }
 
-static t_stack	*ft_init_empty()
-{
-	t_stack	*empty;
-
-	empty = malloc(sizeof(t_stack));
-	if (!empty)
-		return (NULL);
-	empty->top = NULL;
-	empty->size = 0;
-	return (empty);
-}
-
 int	main(int argc, char **argv)
 {
 	char	**args;
@@ -100,11 +88,14 @@ int	main(int argc, char **argv)
 		return (error(), 0);
 	values = parse_args(args, size, &size);
 	if (!values)
-		return (free(args), 0);
+		return (ft_free_args(args), 0);
 	stack_a = ft_init_stack(values, size);
+	if (!stack_a)
+		return (ft_free_args(args), free(values), 0);
 	stack_b = ft_init_empty();
+	if (!stack_b)
+		return (ft_free_args(args), ft_free_stack(stack_a), free(values), 0);
 	free(values);
-	while (args[])
-	free(args);
+	ft_free_args(args);
 	return (0);
 }
