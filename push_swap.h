@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 16:49:08 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/21 23:46:59 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/22 09:45:25 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,10 @@ void	sb(t_stack *b);
 void	ss(t_stack *a, t_stack *b);
 void	pa(t_stack *a, t_stack *b);
 void	pb(t_stack *a, t_stack *b);
+void	ft_ra(t_stack *a);
+void	ft_rb(t_stack *b);
+void	ra(t_stack *a);
+void	rb(t_stack *b);
+void	rr(t_stack *a, t_stack *b);
 
 #endif
