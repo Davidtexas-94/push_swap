@@ -6,7 +6,7 @@
 /*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 12:11:34 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/21 23:51:45 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/22 10:09:48 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,17 +72,39 @@ static char	**ft_get_args(int argc, char **argv, int *size)
 	return (final_array);
 }
 
+static t_stack	*ft_init_empty()
+{
+	t_stack	*empty;
+
+	empty = malloc(sizeof(t_stack));
+	if (!empty)
+		return (NULL);
+	empty->top = NULL;
+	empty->size = 0;
+	return (empty);
+}
+
 int	main(int argc, char **argv)
 {
-	char	*args;
+	char	**args;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+	int		*values;
+	int		size;
 
-/*	if (argc < 2)
-args = ft_get_args(argc, argv, &size)
-se args NULL → error()
-values = parse_args(args, size, &size)
-se values NULL → error() (liberta args antes)
-stack_a = ft_init_stack(values, size)
-stack_b = ft_init_stack vazio
-liberta values
-liberta args */
+	size = 0;
+	if (argc < 2)
+		return (0);
+	args = ft_get_args(argc, argv, &size);
+	if (!args)
+		return (error(), 0);
+	values = parse_args(args, size, &size);
+	if (!values)
+		return (free(args), 0);
+	stack_a = ft_init_stack(values, size);
+	stack_b = ft_init_empty();
+	free(values);
+	while (args[])
+	free(args);
+	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 16:49:08 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/22 09:49:42 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/22 10:45:39 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,27 +38,27 @@ typedef struct s_stack
 t_node		*parse_args(char **args, int count, int *size);
 
 //STACK FUNCTIONS===============================================================
-static void	ft_add_botom(t_node **list, t_node *new);
-void	ft_free_stack(t_stack *stack);
+void		ft_free_stack(t_stack *stack);
+t_stack		*ft_init_stack(int *array, int size);
 
-//ATOL FUNCTION=================================================================
+//UTILS FUNCTION=================================================================
 long long	ft_atol(const char *str);
 
 //OPERATIONS FUNCTIONS==========================================================
-void	sa(t_stack *a);
-void	sb(t_stack *b);
-void	ss(t_stack *a, t_stack *b);
-void	pa(t_stack *a, t_stack *b);
-void	pb(t_stack *a, t_stack *b);
-void	ft_ra(t_stack *a);
-void	ft_rb(t_stack *b);
-void	ra(t_stack *a);
-void	rb(t_stack *b);
-void	rr(t_stack *a, t_stack *b);
-void	ft_rra(t_stack *a);
-void	ft_rrb(t_stack *b);
-void	rra(t_stack *a);
-void	rrb(t_stack *b);
-void	rrr(t_stack *a, t_stack *b);
+void		sa(t_stack *a);
+void		sb(t_stack *b);
+void		ss(t_stack *a, t_stack *b);
+void		pa(t_stack *a, t_stack *b);
+void		pb(t_stack *a, t_stack *b);
+void		ft_ra(t_stack *a);
+void		ft_rb(t_stack *b);
+void		ra(t_stack *a);
+void		rb(t_stack *b);
+void		rr(t_stack *a, t_stack *b);
+void		ft_rra(t_stack *a);
+void		ft_rrb(t_stack *b);
+void		rra(t_stack *a);
+void		rrb(t_stack *b);
+void		rrr(t_stack *a, t_stack *b);
 
 #endif

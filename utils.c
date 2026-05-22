@@ -6,7 +6,7 @@
 /*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 17:40:07 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/20 16:10:18 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/22 10:13:10 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,21 +37,3 @@ long long	ft_atol(const char *str)
 	return (res * sin);
 }
 
-/* int	main(void)
-{
-	char	a[] = "   -1234ab56";
-	char	b[] = " \t\n\v -123";
-	char	c[] = "--123";
-	char	d[] = "++123";
-	char	e[] = "Escola 42";
-	char	f[] = "2147483647";
-	char	g[] = "-2147483648";
-
-	printf("Resultado: %d\n", ft_atol(a));
-	printf("Resultado: %d\n", ft_atol(b));
-	printf("Resultado: %d\n", ft_atol(c));
-	printf("Resultado: %d\n", ft_atol(d));
-	printf("Resultado: %d\n", ft_atol(e));
-	printf("Resultado: %d\n", ft_atol(f));
-	printf("Resultado: %d\n", ft_atol(g));
-} */
