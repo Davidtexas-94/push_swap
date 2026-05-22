@@ -5,7 +5,8 @@ LIBFT_DIR = libft
 LIBFT = ${LIBFT_DIR}/libft.a
 OBJS = ${SRCS:.c=.o}
 
-SRCS = stack.c parse.c main.c utils.c
+SRCS =	stack.c parse.c main.c utils.c algo_simple.c algo_utils.c push_swap_operations.c rotate_operations.c \
+		reverse_operations.c
 
 all: ${LIBFT} ${NAME}
 	@echo "\033[0;32m✓ Compilando arquivos \033[0m"

@@ -6,7 +6,7 @@
 /*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 16:49:08 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/22 12:17:30 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/22 12:23:28 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ typedef struct s_stack
 }	t_stack;
 
 //PARSE FUNCTIONS===============================================================
-int		*parse_args(char **args, int count, int *size);
+int			*parse_args(char **args, int count, int *size);
 
 //STACK FUNCTIONS===============================================================
 void		ft_free_stack(t_stack *stack);

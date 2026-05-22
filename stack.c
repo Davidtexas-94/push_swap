@@ -6,7 +6,7 @@
 /*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 15:30:24 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/22 11:59:33 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/22 13:02:04 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ t_stack	*ft_init_stack(int *array, int size)
 	{
 		novo = ft_new_node(array[i]);
 		ft_add_botom(&stack->top, novo);
+		stack->bottom = novo;
 		stack->size++;
 		i++;
 	}
