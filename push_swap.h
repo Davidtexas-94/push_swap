@@ -6,7 +6,7 @@
 /*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 16:49:08 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/22 09:45:25 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/22 09:49:42 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,10 @@ void	ft_rb(t_stack *b);
 void	ra(t_stack *a);
 void	rb(t_stack *b);
 void	rr(t_stack *a, t_stack *b);
+void	ft_rra(t_stack *a);
+void	ft_rrb(t_stack *b);
+void	rra(t_stack *a);
+void	rrb(t_stack *b);
+void	rrr(t_stack *a, t_stack *b);
 
 #endif
