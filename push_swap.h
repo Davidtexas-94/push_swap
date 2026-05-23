@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 16:49:08 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/22 12:23:28 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/23 10:24:59 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,18 +46,17 @@ long long	ft_atol(const char *str);
 void		ft_free_args(char **args);
 
 //OPERATIONS FUNCTIONS==========================================================
+void    	swap(t_stack *s);
 void		sa(t_stack *a);
 void		sb(t_stack *b);
 void		ss(t_stack *a, t_stack *b);
 void		pa(t_stack *a, t_stack *b);
 void		pb(t_stack *a, t_stack *b);
-void		ft_ra(t_stack *a);
-void		ft_rb(t_stack *b);
+void		reverse(t_stack *s);
 void		ra(t_stack *a);
 void		rb(t_stack *b);
 void		rr(t_stack *a, t_stack *b);
-void		ft_rra(t_stack *a);
-void		ft_rrb(t_stack *b);
+void		rotate(t_stack *s);
 void		rra(t_stack *a);
 void		rrb(t_stack *b);
 void		rrr(t_stack *a, t_stack *b);

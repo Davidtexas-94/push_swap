@@ -6,7 +6,7 @@
 /*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 14:02:39 by dserra-d          #+#    #+#             */
-/*   Updated: 2026/05/22 11:33:04 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/23 10:24:55 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,59 +14,29 @@
 
 void	sa(t_stack *a)
 {
-	t_node	*first;
-	t_node	*second;
-
-	if (!a || a->size <= 1)
+	if (!a)
 		return ;
-	first = a->top;
-	second = a->top->next;
-	a->top = second;
-	second->prev = NULL;
-	second->next = first;
-	first->prev = second;
+	swap (a);
 	write (1, "sa\n", 3);
 }
 
 void	sb(t_stack *b)
 {
-	t_node	*first;
-	t_node	*second;
-
-	if (!b || b->size <= 1)
+	if (!b)
 		return ;
-	first = b->top;
-	second = b->top->next;
-	b->top = second;
-	second->prev = NULL;
-	second->next = first;
-	first->prev = second;
+	swap (b);
 	write (1, "sb\n", 3);
 }
 
 void	ss(t_stack *a, t_stack *b)
 {
-	t_node	*first_a;
-	t_node	*second_a;
-	t_node	*first_b;
-	t_node	*second_b;
-
-	if (!a || !b || a->size <= 1 || b->size <= 1)
+	if (!a || !b)
 		return ;
-	first_a = a->top;
-	second_a = a->top->next;
-	a->top = second_a;
-	second_a->prev = NULL;
-	second_a->next = first_a;
-	first_a->prev = second_a;
-	first_b = b->top;
-	second_b = b->top->next;
-	b->top = second_b;
-	second_b->prev = NULL;
-	second_b->next = first_b;
-	first_b->prev = second_b;
+	swap (a);
+	swap (b);
 	write (1, "ss\n", 3);
 }
+
 
 void	pa(t_stack *a, t_stack *b)
 {
