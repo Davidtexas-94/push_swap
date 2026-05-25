@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 12:11:34 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/25 15:22:13 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/25 19:24:34 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-#include <stdio.h>
 
 static void	error(void)
 {
@@ -19,7 +18,7 @@ static void	error(void)
 	exit(1);
 }
 
-static int	ft_count_args(int argc, char **argv)
+static int	ft_count_args(int argc, char **argv, int start_i)
 {
 	int		total;
 	int		i;
@@ -27,7 +26,7 @@ static int	ft_count_args(int argc, char **argv)
 	char	**split;
 
 	total = 0;
-	i = 1;
+	i = start_i;
 	while (i < argc)
 	{
 		split = ft_split(argv[i], ' ');
@@ -46,7 +45,7 @@ static int	ft_count_args(int argc, char **argv)
 	return (total);
 }
 
-static char	**ft_get_args(int argc, char **argv, int *size)
+static char	**ft_get_args(int argc, char **argv, int *size, int start_i)
 {
 	int		i;
 	int		j;
@@ -54,12 +53,12 @@ static char	**ft_get_args(int argc, char **argv, int *size)
 	char	**final_array;
 	char	**split;
 
-	*size = ft_count_args(argc, argv);
+	*size = ft_count_args(argc, argv, start_i);
 	final_array = malloc(sizeof(char **) * *size + 1);
 	if (!final_array)
 		return (NULL);
 	k = 0;
-	i = 1;
+	i = start_i;
 	while (i < argc)
 	{
 		split = ft_split(argv[i], ' ');
@@ -80,12 +79,19 @@ int	main(int argc, char **argv)
 	t_stack	*stack_b;
 	int		*values;
 	int		size;
+	t_flags	flags;
+	int		start_i;
 	// float disorder;
 
 	size = 0;
 	if (argc < 2)
 		return (0);
-	args = ft_get_args(argc, argv, &size);
+	start_i = get_flag(argc, argv, &flags);
+	if (start_i == -1)
+		return (error(), 0);
+	if (start_i == argc)
+		return (0);
+	args = ft_get_args(argc, argv, &size, start_i);
 	if (!args)
 		return (error(), 0);
 	values = parse_args(args, size, &size);
