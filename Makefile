@@ -22,7 +22,7 @@ FILES +=	${OPER}/push_swap_operations.c ${OPER}/rotate_operations.c \
 
 #Files inside srcs
 FILES +=	${SRCS}/stack.c ${SRCS}/parse.c ${SRCS}/main.c \
-			${SRCS}/utils.c ${SRCS}/push_swap.c
+			${SRCS}/utils.c ${SRCS}/push_swap.c ${SRCS}/flags.c
 
 all: ${LIBFT} ${NAME}
 	@echo "\033[0;32m✓ Compilando arquivos \033[0m"

@@ -6,7 +6,7 @@
 /*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 16:49:08 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/25 11:55:27 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/25 15:09:37 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,9 @@ typedef struct s_flags
 
 //PARSE FUNCTIONS===============================================================
 int			*parse_args(char **args, int count, int *size);
+
+//FLAGS FUNCTIONS===============================================================
+int	get_flag(int argc, char **argv, t_flags *flags);
 
 //STACK FUNCTIONS===============================================================
 void		ft_free_stack(t_stack *stack);
