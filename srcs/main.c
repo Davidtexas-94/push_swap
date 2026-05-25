@@ -6,7 +6,7 @@
 /*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 12:11:34 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/25 20:11:38 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/25 20:34:51 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ int	main(int argc, char **argv)
 		return (ft_free_args(args), ft_free_stack(stack_a), free(values), 0);
 	// disorder = calculate_disorder(stack_a);
 	// fprintf(stderr, "disorder: %f\n", disorder);
-	sort_simple(stack_a, stack_b);
+	execute_strategy(stack_a, stack_b, &flags);
 	free(values);
 	ft_free_args(args);
 	ft_free_stack(stack_a);

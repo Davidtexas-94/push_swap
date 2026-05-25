@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 16:49:08 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/25 15:39:09 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/25 20:25:39 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ int			*parse_args(char **args, int count, int *size);
 
 //FLAGS FUNCTIONS===============================================================
 int			get_flag(int argc, char **argv, t_flags *flags);
+void	execute_strategy(t_stack *stack_a, t_stack *stack_b, t_flags *flags);
 
 //STACK FUNCTIONS===============================================================
 void		ft_free_stack(t_stack *stack);
