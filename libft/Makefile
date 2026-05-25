@@ -39,7 +39,7 @@ SRCS += ft_printf.c ft_printf_utils.c
 SRCS += get_next_line.c 
 
 all: ${NAME}
-	@echo "\033[0;32m✓ Compilando arquivos \033[0m"
+	@echo "\033[0;32m✓ Compilando arquivos do LIBFT\033[0m"
 	@echo " "
 	@rm -f ${OBJS}
 
@@ -56,7 +56,7 @@ fclean: clean
 	@rm -f ${NAME}
 
 re: fclean all
-	@echo "\033[0;32mRecompilando...\033[0m"
+	@echo "\033[0;32mRecompilando LIBFT...\033[0m"
 	@echo "\033[0;31m🗑️ Limpando objetos...\033[0m"
 	@rm -f ${OBJS}
 	@echo "\033[0;32mRecompilado com sucesso!\033[0m"
