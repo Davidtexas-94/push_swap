@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: dserra-d <dserra-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 12:11:34 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/25 10:20:26 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/25 11:02:33 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+#include <stdio.h>
 
 static void	error(void)
 {
@@ -79,6 +80,7 @@ int	main(int argc, char **argv)
 	t_stack	*stack_b;
 	int		*values;
 	int		size;
+	// float disorder;
 
 	size = 0;
 	if (argc < 2)
@@ -95,6 +97,8 @@ int	main(int argc, char **argv)
 	stack_b = ft_init_empty();
 	if (!stack_b)
 		return (ft_free_args(args), ft_free_stack(stack_a), free(values), 0);
+	// disorder = calculate_disorder(stack_a);
+	// printf("%0.1f", disorder);
 	sort_simple(stack_a, stack_b);
 	free(values);
 	ft_free_args(args);

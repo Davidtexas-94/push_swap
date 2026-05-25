@@ -6,7 +6,7 @@
 /*   By: dserra-d <dserra-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 10:13:13 by dserra-d          #+#    #+#             */
-/*   Updated: 2026/05/25 10:47:02 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/25 11:02:06 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	smallest_number(t_stack *a)
 	i = a->top;
 	while (i)
 	{
-		if (i->value > small_number)
+		if (i->value < small_number)
 		{
 			small_number = i->value;
 			position = cur_position;
