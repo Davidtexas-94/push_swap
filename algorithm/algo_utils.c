@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: dserra-d <dserra-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 10:13:13 by dserra-d          #+#    #+#             */
-/*   Updated: 2026/05/25 10:20:55 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/25 10:44:49 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,22 +39,22 @@ float	calculate_disorder(t_stack *a)
 	return (mistakes / total_pairs);
 }
 
-int	biggest_number(t_stack *a)
+int		smallest_number(t_stack *a)
 {
-	int		big_number;
+	int		small_number;
 	int		position;
 	int		cur_position;
 	t_node	*i;
 
-	big_number = INT_MIN;
+	small_number = INT_MAX;
 	position = 0;
 	cur_position = 0;
 	i = a->top;
 	while (i)
 	{
-		if (i->value > big_number)
+		if (i->value > small_number)
 		{
-			big_number = i->value;
+			small_number = i->value;
 			position = cur_position;
 		}
 		cur_position++;
@@ -63,7 +63,7 @@ int	biggest_number(t_stack *a)
 	return (position);
 }
 
-void	move_biggest_top(t_stack *a)
+void	move_smallest_top(t_stack *a)
 {
 	int	i;
 	int	top;
@@ -71,7 +71,7 @@ void	move_biggest_top(t_stack *a)
 	if (!a)
 		return ;
 	i = 0;
-	top = biggest_number(a);
+	top = smallest_number(a);
 	if (top <= a->size / 2)
 	{
 		while (i < top)

@@ -6,7 +6,7 @@
 /*   By: dserra-d <dserra-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 11:15:17 by dserra-d          #+#    #+#             */
-/*   Updated: 2026/05/25 09:57:41 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/25 10:45:11 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,9 @@ void	sort_simple(t_stack *a, t_stack *b)
 		sort_three (a);
 	else
 	{
-		while (a->size > 1)
+		while (a->size > 0)
 		{
-			move_biggest_top(a);
+			move_smallest_top(a);
 			pb(a, b);
 		}
 		while (b->size > 0)

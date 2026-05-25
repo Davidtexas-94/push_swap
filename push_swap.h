@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: dserra-d <dserra-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 16:49:08 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/25 10:21:20 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/25 10:46:01 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ void		rrr(t_stack *a, t_stack *b);
 
 //ALGORITHM FUNCTIONS==========================================================
 float		calculate_disorder(t_stack *a);
-void		move_biggest_top(t_stack *a);
-int			biggest_number(t_stack *a);
+void		move_smallest_top(t_stack *a);
+int			smallest_number(t_stack *a);
 void		sort_simple(t_stack *a, t_stack *b);
 
 #endif
