@@ -6,7 +6,7 @@
 /*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 12:11:34 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/25 19:24:34 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/25 20:11:38 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ int	main(int argc, char **argv)
 		return (error(), 0);
 	values = parse_args(args, size, &size);
 	if (!values)
-		return (ft_free_args(args), 0);
+		return (ft_free_args(args), error(), 0);
 	stack_a = ft_init_stack(values, size);
 	if (!stack_a)
 		return (ft_free_args(args), free(values), 0);
