@@ -6,7 +6,7 @@
 /*   By: dserra-d <dserra-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 10:13:13 by dserra-d          #+#    #+#             */
-/*   Updated: 2026/05/25 10:44:49 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/25 10:47:02 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ float	calculate_disorder(t_stack *a)
 	return (mistakes / total_pairs);
 }
 
-int		smallest_number(t_stack *a)
+int	smallest_number(t_stack *a)
 {
 	int		small_number;
 	int		position;
