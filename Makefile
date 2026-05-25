@@ -1,12 +1,28 @@
 NAME = push_swap
 CC = cc
-FLAGS = -g -Wall -Wextra -Werror
+FLAGS = -g -Wall -Wextra -Werror -I push_swap.h
 LIBFT_DIR = libft
 LIBFT = ${LIBFT_DIR}/libft.a
-OBJS = ${SRCS:.c=.o}
+OBJS = ${FILES:.c=.o}
 
-SRCS =	stack.c parse.c main.c utils.c algo_simple.c algo_utils.c push_swap_operations.c rotate_operations.c \
-		reverse_operations.c operation_utils.c
+# Folders
+OPER = operations
+SRCS = srcs
+ALGO = algorithm
+
+# Files outside folders
+FILES =		
+
+#Files inside algorithm
+FILES +=	${ALGO}/algo_simple.c ${ALGO}/algo_utils.c
+
+#Files inside operations
+FILES +=	${OPER}/push_swap_operations.c ${OPER}/rotate_operations.c \
+			${OPER}/reverse_operations.c ${OPER}/operation_utils.c
+
+#Files inside srcs
+FILES +=	${SRCS}/stack.c ${SRCS}/parse.c ${SRCS}/main.c \
+			${SRCS}/utils.c ${SRCS}/push_swap.c
 
 all: ${LIBFT} ${NAME}
 	@echo "\033[0;32m✓ Compilando arquivos \033[0m"
