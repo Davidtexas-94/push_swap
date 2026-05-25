@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_simple.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dserra-d <dserra-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 11:15:17 by dserra-d          #+#    #+#             */
-/*   Updated: 2026/05/25 10:45:11 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/25 15:30:25 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,15 @@ void	sort_three(t_stack *a)
 	z = a->bottom;
 	if (y->value < x->value && y->value < z->value && x->value < z->value)
 		sa (a);
+	else if (x->value < y->value && y->value > z->value && x->value > z->value)
+		rra (a);
+	else if (x->value > y->value && y->value < z->value && x->value > z->value)
+		ra (a);
 	else if (x->value < y->value && y->value > z->value && x->value < z->value)
 	{
 		rra (a);
 		sa (a);
 	}
-	else if (x->value < y->value && y->value > z->value && x->value > z->value)
-		rra (a);
-	else if (x->value > y->value && y->value < z->value && x->value > z->value)
-		ra (a);
 	else if (x->value > y->value && y->value > z->value && x->value > z->value)
 	{
 		sa (a);
