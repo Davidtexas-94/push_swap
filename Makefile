@@ -1,6 +1,6 @@
-NAME = push_swap.a
+NAME = push_swap
 CC = cc
-FLAGS = -g -Wall -Wextra -Werror -I push_swap.h
+FLAGS = -g -Wall -Wextra -Werror push_swap.h
 LIBFT_DIR = libft
 LIBFT = ${LIBFT_DIR}/libft.a
 OBJS = ${FILES:.c=.o}
