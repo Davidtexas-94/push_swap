@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dserra-d <dserra-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 12:11:34 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/25 11:15:04 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/25 15:22:13 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ int	main(int argc, char **argv)
 	if (!stack_b)
 		return (ft_free_args(args), ft_free_stack(stack_a), free(values), 0);
 	// disorder = calculate_disorder(stack_a);
-	// printf("%0.1f", disorder);
+	// fprintf(stderr, "disorder: %f\n", disorder);
 	sort_simple(stack_a, stack_b);
 	free(values);
 	ft_free_args(args);
