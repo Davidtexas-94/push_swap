@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dserra-d <dserra-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 16:49:08 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/25 10:46:01 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/25 11:55:27 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 
 //INCLUDES======================================================================
 # include "libft.h"
+
+//DEFINE FLAGS==================================================================
+# define FLAG_ADAPTIVE	0
+# define FLAG_SIMPLE	1
+# define FLAG_MEDIUM	2
+# define FLAG_COMPLEX	3
+# define FLAG_BENCH		4
 
 //STRUCTS=======================================================================
 typedef struct s_node
@@ -32,6 +39,12 @@ typedef struct s_stack
 	t_node	*bottom;
 	int		size;
 }	t_stack;
+
+typedef struct s_flags
+{
+	int strategy;
+	int bench;
+}	t_flags;
 
 //PARSE FUNCTIONS===============================================================
 int			*parse_args(char **args, int count, int *size);
