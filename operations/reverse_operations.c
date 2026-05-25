@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_operations.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: dserra-d <dserra-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 15:27:31 by dserra-d          #+#    #+#             */
-/*   Updated: 2026/05/23 10:15:34 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/25 09:58:26 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	rra(t_stack *a)
 {

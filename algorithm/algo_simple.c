@@ -6,11 +6,11 @@
 /*   By: dserra-d <dserra-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 11:15:17 by dserra-d          #+#    #+#             */
-/*   Updated: 2026/05/25 09:48:11 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/25 09:57:41 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	sort_two(t_stack *a)
 {

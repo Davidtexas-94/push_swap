@@ -1,4 +1,4 @@
-NAME = push_swap
+NAME = push_swap.a
 CC = cc
 FLAGS = -g -Wall -Wextra -Werror -I push_swap.h
 LIBFT_DIR = libft
