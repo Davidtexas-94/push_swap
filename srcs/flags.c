@@ -6,7 +6,7 @@
 /*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:25:04 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/25 15:06:37 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/25 15:13:45 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	get_flag(int argc, char **argv, t_flags *flags)
 {
-	int i;
+	int	i;
 
 	flags->strategy = FLAG_ADAPTIVE;
 	flags->bench = 0;
