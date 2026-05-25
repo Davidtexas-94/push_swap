@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   operation_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dserra-d <dserra-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 10:10:15 by dserra-d          #+#    #+#             */
-/*   Updated: 2026/05/25 09:58:17 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/25 10:19:38 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void    swap(t_stack *s)
+void	swap(t_stack *s)
 {
-    t_node	*first;
+	t_node	*first;
 	t_node	*second;
 	t_node	*third;
 

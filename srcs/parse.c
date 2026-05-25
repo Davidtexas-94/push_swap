@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dserra-d <dserra-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 13:29:51 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/25 09:58:41 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/25 10:20:03 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	*parse_args(char **args, int count, int *size)
 			return (free(array), NULL);
 		val = ft_atol(args[i]);
 		if (val > INT_MAX || val < INT_MIN)
-			return(free(array), NULL);
+			return (free(array), NULL);
 		if (ft_duplicate(array, i, (int)val))
 			return (free(array), NULL);
 		array[i] = (int)val;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dserra-d <dserra-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 10:13:13 by dserra-d          #+#    #+#             */
-/*   Updated: 2026/05/25 09:57:57 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/25 10:20:55 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ float	calculate_disorder(t_stack *a)
 	return (mistakes / total_pairs);
 }
 
-int		biggest_number(t_stack *a)
+int	biggest_number(t_stack *a)
 {
 	int		big_number;
 	int		position;
