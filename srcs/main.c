@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 12:11:34 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/26 01:33:06 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/26 09:01:11 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static char	**ft_get_args(int argc, char **argv, int *size, int start_i)
 	char	**split;
 
 	*size = ft_count_args(argc, argv, start_i);
-	final_array = malloc(sizeof(char **) * *size + 1);
+	final_array = malloc(sizeof(char **) * (*size + 1));
 	if (!final_array)
 		return (NULL);
 	k = 0;
