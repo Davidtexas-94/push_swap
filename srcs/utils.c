@@ -6,7 +6,7 @@
 /*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 17:40:07 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/26 08:02:14 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/26 08:09:00 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	ft_free_args(char **args)
 
 int	is_sorted(t_stack *stack)
 {
-	t_node *current;
+	t_node	*current;
 
 	if (!stack || stack->size <= 1)
 		return (1);
