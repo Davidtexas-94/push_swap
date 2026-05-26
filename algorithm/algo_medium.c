@@ -6,7 +6,13 @@
 /*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 09:45:26 by dserra-d          #+#    #+#             */
-/*   Updated: 2026/05/26 09:45:36 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/26 09:49:23 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../push_swap.h"
+
+void    sort_medium(t_stack *a, t_stack *b)
+{
+
+}
