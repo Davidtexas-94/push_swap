@@ -6,7 +6,7 @@
 /*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 16:49:08 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/26 10:53:13 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/26 12:59:41 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,10 @@ int			smallest_number(t_stack *a);
 void		sort_simple(t_stack *a, t_stack *b);
 void		set_index(t_stack *a);
 void		sort_complex(t_stack *a, t_stack *b);
+int			ft_sqrt(int n);
+void		sort_medium(t_stack *a, t_stack *b);
+void		move_index_top(t_stack *b);
+int			biggest_index(t_stack *b);
+int			chuck_position(t_stack *a, int min, int max);
 
 #endif

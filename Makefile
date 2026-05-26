@@ -15,7 +15,8 @@ FILES =
 
 #Files inside algorithm
 FILES +=	${ALGO}/algo_simple.c ${ALGO}/algo_medium.c \
-			${ALGO}/algo_complex.c ${ALGO}/algo_utils.c
+			${ALGO}/algo_complex.c ${ALGO}/algo_utils.c \
+			${ALGO}/algo_utils2.c
 
 #Files inside operations
 FILES +=	${OPER}/push_swap_operations.c ${OPER}/rotate_operations.c \

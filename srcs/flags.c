@@ -6,7 +6,7 @@
 /*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:25:04 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/26 10:53:35 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/26 12:24:50 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	execute_strat(t_stack *stack_a, t_stack *stack_b, t_flags *flags)
 	if (flags->strategy == FLAG_SIMPLE)
 		sort_simple(stack_a, stack_b); //PROVISÓRIO, ALTERAR PARA O SORT_REPESCTIVO.
 	else if (flags->strategy == FLAG_MEDIUM)
-		sort_simple(stack_a, stack_b); //PROVISÓRIO, ALTERAR PARA O SORT_REPESCTIVO.
+		sort_medium(stack_a, stack_b); //PROVISÓRIO, ALTERAR PARA O SORT_REPESCTIVO.
 	else if (flags->strategy == FLAG_COMPLEX)
 		sort_complex(stack_a, stack_b); //PROVISÓRIO, ALTERAR PARA O SORT_REPESCTIVO.
 	else if (flags->strategy == FLAG_ADAPTIVE)
