@@ -6,7 +6,7 @@
 /*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:25:04 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/26 01:32:59 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/26 08:04:08 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ int	get_flag(int argc, char **argv, t_flags *flags)
 
 void	execute_strat(t_stack *stack_a, t_stack *stack_b, t_flags *flags)
 {
+	if (is_sorted(stack_a))
+		return ;
 	if (flags->strategy == FLAG_SIMPLE)
 		sort_simple(stack_a, stack_b); //PROVISÓRIO, ALTERAR PARA O SORT_REPESCTIVO.
 	else if (flags->strategy == FLAG_MEDIUM)

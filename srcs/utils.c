@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dserra-d <dserra-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 17:40:07 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/25 09:58:52 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/26 08:02:14 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,20 @@ void	ft_free_args(char **args)
 		i++;
 	}
 	free(args);
+}
+
+int	is_sorted(t_stack *stack)
+{
+	t_node *current;
+
+	if (!stack || stack->size <= 1)
+		return (1);
+	current = stack->top;
+	while (current->next)
+	{
+		if (current->value > current->next->value)
+			return (0);
+		current = current->next;
+	}
+	return (1);
 }

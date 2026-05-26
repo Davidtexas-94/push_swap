@@ -6,7 +6,7 @@
 /*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 16:49:08 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/26 01:32:51 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/26 08:02:35 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ t_stack		*ft_init_empty(void);
 //UTILS FUNCTION================================================================
 long long	ft_atol(const char *str);
 void		ft_free_args(char **args);
+int			is_sorted(t_stack *stack);
 
 //OPERATIONS FUNCTIONS==========================================================
 void		swap(t_stack *s);
