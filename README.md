@@ -1,60 +1,214 @@
-FASE 2: Implementar main() 🔧
-Parse de argumentos
-Validação
-Criar stacks A e B
-Chamar algoritmo
-Liberar memória
-FASE 3: Operações Básicas 🎯
-11 operações: sa, sb, ss, pa, pb, ra, rb, rr, rra, rrb, rrr
-Cada uma printa o nome dela
-FASE 4: Algoritmo de Sorting 🧠
-Escolher: Turk (complexo), Radix (simples), ou Greedy (fácil)
-Implementar ordenação
-FASE 5: Edge Cases & Otimizações ✅
-Já ordenado, duplicatas, overflow, input inválida
-Contar movimentos
+*This project has been created as part of the 42 curriculum by acano-kr, dserra-d.*
 
+---
 
+# Push_Swap
 
-### ***IDEIA*** DE DIVISÃO DA MAIN FUTURAMENTE 
+> *Because Swap_push doesn't feel as natural.*
 
-Aqui está o plano de divisão para o futuro:
+A sorting algorithm project built in C that sorts a stack of integers using a limited set of operations and the minimum possible number of moves. The program selects the most efficient strategy based on the measured disorder of the input.
 
-1. Bloco de Entrada e Configuração (init_program_context)
-Esta função vai tratar de ler as flags e extrair os argumentos limpos.
-O que ela faz: Chama get_flag, valida erros de flags e chama ft_get_args.
-O que ela devolve: O array de strings (args) já sem as flags.
+---
 
-2. Bloco de Criação da Stack (setup_stacks)
-Esta função transforma as strings em números e inicializa as memórias.
-O que ela faz: Chama parse_args, ft_init_stack para a Stack A e ft_init_empty para a Stack B.
-O que ela recebe/devolve: Recebe o args e configura os ponteiros das stacks.
+## Authors
 
-3. Bloco de Execução (execute_sorting)
-Esta função vai conter a inteligência do novo subject (cálculo de desordem e escolha do algoritmo).
-O que ela faz: Calcula a desordem, verifica qual a flags.strategy escolhida e chama o algoritmo correto (sort_simple, sort_adaptive, etc.).
+| Login | GitHub |
+|-------|--------|
+| acano-kr | [@acano-kr](https://github.com/acano-kr) |
+| dserra-d | [@dserra-d](https://github.com/dserra-d) |
 
-int	main(int argc, char **argv)
-{
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-	t_flags	flags;
-	char	**args;
+> Replace the GitHub links above with your actual profiles.
 
-	if (argc < 2)
-		return (0);
-	// 1. Configura as flags e extrai os argumentos limpos
-	args = init_program_context(argc, argv, &flags);
-	if (!args)
-		return (0);
-	// 2. Transforma argumentos em stacks reais alocadas
-	if (!setup_stacks(args, &stack_a, &stack_b))
-		return (ft_free_args(args), 0);
-	ft_free_args(args);
-	// 3. Executa a lógica de ordenação/bench do novo subject
-	execute_sorting(stack_a, stack_b, &flags);
-	// 4. Limpeza final
-	ft_free_stack(stack_a);
-	ft_free_stack(stack_b);
-	return (0);
-}
+---
+
+## Description
+
+**Push_swap** receives a list of integers as arguments and outputs the shortest possible sequence of stack operations that sorts them in ascending order.
+
+The program uses two stacks — `a` and `b` — and a set of 11 operations to manipulate them. It implements four distinct sorting strategies and selects the most appropriate one based on a **disorder metric** calculated before any moves are made.
+
+### Available operations
+
+| Operation | Description |
+|-----------|-------------|
+| `sa` / `sb` / `ss` | Swap the top two elements of stack a / b / both |
+| `pa` / `pb` | Push the top element from b to a / from a to b |
+| `ra` / `rb` / `rr` | Rotate stack a / b / both upward |
+| `rra` / `rrb` / `rrr` | Reverse rotate stack a / b / both |
+
+---
+
+## Instructions
+
+### Requirements
+
+- GCC or Clang with C99 support
+- GNU Make
+- A Unix-based system (Linux or macOS)
+
+### Compilation
+
+```bash
+# Clone the repository
+git clone <repo-url>
+cd push_swap
+
+# Compile
+make
+
+# Clean object files
+make clean
+
+# Full clean (including binary)
+make fclean
+
+# Recompile from scratch
+make re
+```
+
+### Usage
+
+```bash
+# Basic usage — default strategy (adaptive)
+./push_swap 4 67 3 87 23
+
+# Force a specific strategy
+./push_swap --simple   5 4 3 2 1
+./push_swap --medium   5 4 3 2 1
+./push_swap --complex  5 4 3 2 1
+./push_swap --adaptive 5 4 3 2 1
+
+# Enable benchmark mode (outputs metrics to stderr)
+./push_swap --bench --adaptive 4 67 3 87 23
+
+# Count total operations generated
+./push_swap 4 67 3 87 23 | wc -l
+
+# Verify correctness with checker
+ARG="4 67 3 87 23"
+./push_swap $ARG | ./checker_linux $ARG
+```
+
+### Input formats accepted
+
+```bash
+# Space-separated arguments
+./push_swap 3 1 2
+
+# Quoted string
+./push_swap "3 1 2"
+
+# Mixed
+./push_swap "3 1" 2 "4 5"
+```
+
+### Error handling
+
+The program prints `Error` to stderr and exits in the following cases:
+
+- Non-integer arguments
+- Integers outside the valid `int` range
+- Duplicate values
+- Invalid flags
+
+```bash
+./push_swap 0 one 2       # Error
+./push_swap 3 2 3         # Error
+./push_swap --invalido 1  # Error
+```
+
+### Benchmark mode output
+
+When `--bench` is passed, the following is printed to stderr after sorting:
+
+```
+[bench] disorder:    XX.XX%
+[bench] strategy:    Adaptive / O(n log n)
+[bench] total_ops:   XXXX
+[bench] sa: X  sb: X  ss: X  pa: X  pb: X
+[bench] ra: X  rb: X  rr: X  rra: X  rrb: X  rrr: X
+```
+
+---
+
+## Performance Benchmarks
+
+| Input size | Pass (min) | Good | Excellent |
+|------------|-----------|------|-----------|
+| 100 numbers | < 2000 ops | < 1500 ops | < 700 ops |
+| 500 numbers | < 12000 ops | < 8000 ops | < 5500 ops |
+
+```bash
+# Test with random input
+shuf -i 0-9999 -n 100 > args.txt && ./push_swap $(cat args.txt) | wc -l
+shuf -i 0-9999 -n 500 > args.txt && ./push_swap $(cat args.txt) | wc -l
+```
+
+---
+
+## Algorithms
+
+> *This section will be completed once all four strategies are fully implemented.*
+
+### Disorder Metric
+
+Before any moves, the program computes a disorder value between 0 and 1 using the Kendall tau metric — counting inversions (pairs where a larger number appears before a smaller one) divided by the total number of pairs.
+
+### Strategies
+
+| Flag | Complexity | Disorder threshold |
+|------|-----------|-------------------|
+| `--simple` | O(n²) | < 0.2 |
+| `--medium` | O(n√n) | 0.2 – 0.5 |
+| `--complex` | O(n log n) | ≥ 0.5 |
+| `--adaptive` | Selects above | automatic |
+
+> Detailed explanation, justification, and complexity arguments for each strategy will be added here.
+
+---
+
+## Project Structure
+
+```
+push_swap/
+├── push_swap.h
+├── Makefile
+├── algorithm/
+│   ├── algo_simple.c
+│   └── algo_utils.c
+├── operations/
+│   ├── operation_utils.c
+│   ├── push_swap_operations.c
+│   ├── rotate_operations.c
+│   └── reverse_operations.c
+├── srcs/
+│   ├── main.c
+│   ├── flags.c
+│   ├── parse.c
+│   ├── stack.c
+│   ├── utils.c
+│   └── push_swap.c
+└── libft/
+```
+
+---
+
+## Resources
+
+### References
+
+- [Push_swap Visualizer](https://github.com/o-reo/push_swap_visualizer) — visual debugger for stack operations
+- [Sorting Algorithms — Wikipedia](https://en.wikipedia.org/wiki/Sorting_algorithm)
+- [Kendall tau distance](https://en.wikipedia.org/wiki/Kendall_tau_distance) — basis for the disorder metric
+- [Big-O Notation — CS50](https://cs50.harvard.edu/x/2024/notes/3/) — algorithmic complexity reference
+
+### AI Usage
+
+Throughout this project, AI (Claude by Anthropic) was used as a collaborative tool for:
+
+- **Architecture decisions** — discussing data structure choices (linked list vs array) and their trade-offs for this specific problem
+- **Debugging** — identifying logic errors in pointer manipulation and stack operations
+- **Code review** — validating correctness of individual functions before integration
+- **Understanding complexity** — clarifying how Big-O applies specifically to the push_swap operation model (not classical array operations)
+
+All AI-generated suggestions were reviewed, tested, and fully understood by both authors before being incorporated. No code was blindly copied — every function was written and validated by the team.
