@@ -6,7 +6,7 @@
 /*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 16:49:08 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/25 20:25:39 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/26 00:59:28 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 # define FLAG_SIMPLE	1
 # define FLAG_MEDIUM	2
 # define FLAG_COMPLEX	3
-# define FLAG_BENCH		4
 
 //STRUCTS=======================================================================
 typedef struct s_node
@@ -51,7 +50,7 @@ int			*parse_args(char **args, int count, int *size);
 
 //FLAGS FUNCTIONS===============================================================
 int			get_flag(int argc, char **argv, t_flags *flags);
-void	execute_strategy(t_stack *stack_a, t_stack *stack_b, t_flags *flags);
+void		execute_strategy(t_stack *stack_a, t_stack *stack_b, t_flags *flags);
 
 //STACK FUNCTIONS===============================================================
 void		ft_free_stack(t_stack *stack);
