@@ -3,30 +3,42 @@
 /*                                                        :::      ::::::::   */
 /*   rotate_operations.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dserra-d <dserra-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 15:18:24 by dserra-d          #+#    #+#             */
-/*   Updated: 2026/05/25 09:58:29 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/26 13:43:26 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ra(t_stack *a)
+void	ra(t_stack *a, t_flags *flag)
 {
+	if (!a)
+		return ;
 	rotate (a);
+	if (flag)
+		flag->ra++;
 	write (1, "ra\n", 3);
 }
 
-void	rb(t_stack *b)
+void	rb(t_stack *b, t_flags *flag)
 {
+	if (!b)
+		return;
 	rotate (b);
+	if (flag)
+		flag->rb++;
 	write (1, "rb\n", 3);
 }
 
-void	rr(t_stack *a, t_stack *b)
+void	rr(t_stack *a, t_stack *b, t_flags *flag)
 {
+	if (!a || !b)
+		return ;
 	rotate (a);
 	rotate (b);
+	if (flag)
+		flag->rr++;
 	write (1, "rr\n", 3);
 }

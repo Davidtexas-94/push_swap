@@ -3,41 +3,47 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_operations.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 14:02:39 by dserra-d          #+#    #+#             */
-/*   Updated: 2026/05/25 10:19:21 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/26 13:41:12 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	sa(t_stack *a)
+void	sa(t_stack *a, t_flags *flag)
 {
 	if (!a)
 		return ;
 	swap (a);
+	if (flag)
+		flag->sa++;
 	write (1, "sa\n", 3);
 }
 
-void	sb(t_stack *b)
+void	sb(t_stack *b, t_flags *flag)
 {
 	if (!b)
 		return ;
 	swap (b);
+	if (flag)
+		flag->sb++;
 	write (1, "sb\n", 3);
 }
 
-void	ss(t_stack *a, t_stack *b)
+void	ss(t_stack *a, t_stack *b, t_flags *flag)
 {
 	if (!a || !b)
 		return ;
 	swap (a);
 	swap (b);
+	if (flag)
+		flag->ss++;
 	write (1, "ss\n", 3);
 }
 
-void	pa(t_stack *a, t_stack *b)
+void	pa(t_stack *a, t_stack *b, t_flags *flag)
 {
 	t_node	*first_b;
 	t_node	*first_a;
@@ -60,10 +66,12 @@ void	pa(t_stack *a, t_stack *b)
 		b->bottom = NULL;
 	if (a->size == 1)
 		a->bottom = first_b;
+	if (flag)
+		flag->pa++;
 	write (1, "pa\n", 3);
 }
 
-void	pb(t_stack *a, t_stack *b)
+void	pb(t_stack *a, t_stack *b, t_flags *flag)
 {
 	t_node	*first_a;
 	t_node	*first_b;
@@ -86,5 +94,7 @@ void	pb(t_stack *a, t_stack *b)
 		a->bottom = NULL;
 	if (b->size == 1)
 		b->bottom = first_a;
+	if (flag)
+		flag->pb++;
 	write (1, "pb\n", 3);
 }
