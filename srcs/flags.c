@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   flags.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:25:04 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/26 08:04:08 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/26 10:53:35 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	execute_strat(t_stack *stack_a, t_stack *stack_b, t_flags *flags)
 	else if (flags->strategy == FLAG_MEDIUM)
 		sort_simple(stack_a, stack_b); //PROVISÓRIO, ALTERAR PARA O SORT_REPESCTIVO.
 	else if (flags->strategy == FLAG_COMPLEX)
-		sort_simple(stack_a, stack_b); //PROVISÓRIO, ALTERAR PARA O SORT_REPESCTIVO.
+		sort_complex(stack_a, stack_b); //PROVISÓRIO, ALTERAR PARA O SORT_REPESCTIVO.
 	else if (flags->strategy == FLAG_ADAPTIVE)
 		sort_simple(stack_a, stack_b); //PROVISÓRIO, ALTERAR PARA O SORT_REPESCTIVO.
 	if (flags->bench == 1)

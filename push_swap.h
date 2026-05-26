@@ -6,7 +6,7 @@
 /*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 16:49:08 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/26 09:34:36 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/26 10:53:13 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,5 +84,6 @@ void		move_smallest_top(t_stack *a);
 int			smallest_number(t_stack *a);
 void		sort_simple(t_stack *a, t_stack *b);
 void		set_index(t_stack *a);
+void		sort_complex(t_stack *a, t_stack *b);
 
 #endif
