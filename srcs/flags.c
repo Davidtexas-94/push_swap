@@ -6,7 +6,7 @@
 /*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:25:04 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/26 13:12:22 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/26 13:20:25 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	get_flag(int argc, char **argv, t_flags *flags)
 
 void	execute_strat(t_stack *stack_a, t_stack *stack_b, t_flags *flags)
 {
-	float disorder;
+	float	disorder;
 
 	if (is_sorted(stack_a))
 		return ;

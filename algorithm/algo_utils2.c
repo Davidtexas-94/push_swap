@@ -6,7 +6,7 @@
 /*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 12:48:10 by dserra-d          #+#    #+#             */
-/*   Updated: 2026/05/26 12:49:02 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/26 13:18:55 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,8 @@ void	move_index_top(t_stack *b)
 
 int	chuck_position(t_stack *a, int min, int max)
 {
-	int position;
-	t_node *node;
+	int		position;
+	t_node	*node;
 
 	position = 0;
 	node = a->top;

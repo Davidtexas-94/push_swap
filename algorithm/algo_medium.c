@@ -6,7 +6,7 @@
 /*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 11:00:50 by dserra-d          #+#    #+#             */
-/*   Updated: 2026/05/26 13:03:09 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/26 13:20:07 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ static	void	pass_to_b(t_stack *a, t_stack *b, int min, int max)
 	while (i > 0)
 	{
 		if (a->top->index >= min && a->top->index < max)
-				pb(a, b);
+			pb(a, b);
 		else
 		{
-			position = chuck_position(a, min, max);				
+			position = chuck_position(a, min, max);
 			if (position <= a->size / 2)
 				ra (a);
 			else
@@ -36,10 +36,10 @@ static	void	pass_to_b(t_stack *a, t_stack *b, int min, int max)
 
 void	sort_medium(t_stack *a, t_stack *b)
 {
-	int chunk;
-	int chunck_size;
-	int total_chuncks;
-	
+	int	chunk;
+	int	chunck_size;
+	int	total_chuncks;
+
 	if (!a || !b)
 		return ;
 	set_index(a);

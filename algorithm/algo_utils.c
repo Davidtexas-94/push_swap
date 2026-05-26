@@ -6,7 +6,7 @@
 /*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 10:13:13 by dserra-d          #+#    #+#             */
-/*   Updated: 2026/05/26 11:59:53 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/26 13:18:43 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ void	set_index(t_stack *a)
 
 int	ft_sqrt(int n)
 {
-	int sqrt;
+	int	sqrt;
 
 	sqrt = 1;
 	while (sqrt * sqrt <= n)
