@@ -14,10 +14,9 @@ A sorting algorithm project built in C that sorts a stack of integers using a li
 
 | Login | GitHub |
 |-------|--------|
-| acano-kr | [@acano-kr](https://github.com/acano-kr) |
-| dserra-d | [@dserra-d](https://github.com/dserra-d) |
+| acano-kr | [@acano-kr](https://github.com/XandaoKruger) |
+| dserra-d | [@dserra-d](https://github.com/Davidtexas-94) |
 
-> Replace the GitHub links above with your actual profiles.
 
 ---
 
@@ -50,7 +49,7 @@ The program uses two stacks — `a` and `b` — and a set of 11 operations to ma
 
 ```bash
 # Clone the repository
-git clone <repo-url>
+git clone <https://github.com/Davidtexas-94/push_swap.git>
 cd push_swap
 
 # Compile
