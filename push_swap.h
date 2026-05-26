@@ -6,7 +6,7 @@
 /*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 16:49:08 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/26 14:00:34 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/26 14:34:09 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,19 +42,26 @@ typedef struct s_stack
 typedef struct s_flags
 {
 	int	strategy;
+	int	used_strategy;
 	int	bench;
 	int	sa;
 	int	sb;
-	int ss;
+	int	ss;
 	int	pa;
 	int	pb;
-	int ra;
-	int rb;
+	int	ra;
+	int	rb;
 	int	rr;
 	int	rra;
 	int	rrb;
-	int rrr;
+	int	rrr;
 }	t_flags;
+
+typedef struct s_chunk
+{
+	int	min;
+	int	max;
+}	t_chunk;
 
 //PARSE FUNCTIONS===============================================================
 int			*parse_args(char **args, int count, int *size);

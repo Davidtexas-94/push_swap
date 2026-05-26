@@ -6,18 +6,22 @@
 /*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 11:00:50 by dserra-d          #+#    #+#             */
-/*   Updated: 2026/05/26 13:58:49 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/26 14:34:49 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static	void	pass_to_b(t_stack *a, t_stack *b, int min, int max, t_flags *flags)
+static	void	pass_to_b(t_stack *a, t_stack *b, t_chunk chunk, t_flags *flags)
 {
 	int	i;
 	int	position;
+	int	min;
+	int	max;
 
 	i = a->size;
+	min = chunk.min;
+	max = chunk.max;
 	while (i > 0)
 	{
 		if (a->top->index >= min && a->top->index < max)
@@ -36,19 +40,22 @@ static	void	pass_to_b(t_stack *a, t_stack *b, int min, int max, t_flags *flags)
 
 void	sort_medium(t_stack *a, t_stack *b, t_flags *flags)
 {
-	int	chunk;
-	int	chunck_size;
-	int	total_chuncks;
+	int		chunk;
+	int		chunk_size;
+	int		total_chunks;
+	t_chunk	c;
 
 	if (!a || !b)
 		return ;
 	set_index(a);
-	chunck_size = ft_sqrt(a->size) + ft_sqrt(a->size) / 2;
-	total_chuncks = a->size / chunck_size + 1;
+	chunk_size = ft_sqrt(a->size) + ft_sqrt(a->size) / 2;
+	total_chunks = a->size / chunk_size + 1;
 	chunk = 0;
-	while (chunk < total_chuncks)
+	while (chunk < total_chunks)
 	{
-		pass_to_b(a, b, chunk * chunck_size, (chunk + 1) * chunck_size, flags);
+		c.min = chunk * chunk_size;
+		c.max = (chunk + 1) * chunk_size;
+		pass_to_b(a, b, c, flags);
 		chunk++;
 	}
 	while (b->size > 0)

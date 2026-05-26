@@ -6,7 +6,7 @@
 /*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 15:18:24 by dserra-d          #+#    #+#             */
-/*   Updated: 2026/05/26 13:43:26 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/26 14:21:01 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ra(t_stack *a, t_flags *flag)
 void	rb(t_stack *b, t_flags *flag)
 {
 	if (!b)
-		return;
+		return ;
 	rotate (b);
 	if (flag)
 		flag->rb++;
