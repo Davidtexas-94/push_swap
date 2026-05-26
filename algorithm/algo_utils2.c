@@ -6,7 +6,7 @@
 /*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 12:48:10 by dserra-d          #+#    #+#             */
-/*   Updated: 2026/05/26 13:18:55 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/26 13:59:35 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	biggest_index(t_stack *b)
 	return (position);
 }
 
-void	move_index_top(t_stack *b)
+void	move_index_top(t_stack *b, t_flags *flags)
 {
 	int	i;
 	int	top;
@@ -49,7 +49,7 @@ void	move_index_top(t_stack *b)
 	{
 		while (i < top)
 		{
-			rb (b);
+			rb (b, flags);
 			i++;
 		}
 	}
@@ -57,7 +57,7 @@ void	move_index_top(t_stack *b)
 	{
 		while (i < b->size - top)
 		{
-			rrb (b);
+			rrb (b, flags);
 			i++;
 		}
 	}

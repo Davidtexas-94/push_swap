@@ -6,7 +6,7 @@
 /*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 16:49:08 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/26 13:36:07 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/26 14:00:34 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,30 +75,30 @@ int			is_sorted(t_stack *stack);
 
 //OPERATIONS FUNCTIONS==========================================================
 void		swap(t_stack *s);
-void		sa(t_stack *a, t_flags *flag);
-void		sb(t_stack *b, t_flags *flag);
-void		ss(t_stack *a, t_stack *b, t_flags *flag);
-void		pa(t_stack *a, t_stack *b, t_flags *flag);
-void		pb(t_stack *a, t_stack *b, t_flags *flag);
+void		sa(t_stack *a, t_flags *flags);
+void		sb(t_stack *b, t_flags *flags);
+void		ss(t_stack *a, t_stack *b, t_flags *flags);
+void		pa(t_stack *a, t_stack *b, t_flags *flags);
+void		pb(t_stack *a, t_stack *b, t_flags *flags);
 void		reverse(t_stack *s);
-void		ra(t_stack *a, t_flags *flag);
-void		rb(t_stack *b, t_flags *flag);
-void		rr(t_stack *a, t_stack *b, t_flags *flag);
+void		ra(t_stack *a, t_flags *flags);
+void		rb(t_stack *b, t_flags *flags);
+void		rr(t_stack *a, t_stack *b, t_flags *flags);
 void		rotate(t_stack *s);
-void		rra(t_stack *a, t_flags *flag);
-void		rrb(t_stack *b, t_flags *flag);
-void		rrr(t_stack *a, t_stack *b, t_flags *flag);
+void		rra(t_stack *a, t_flags *flags);
+void		rrb(t_stack *b, t_flags *flags);
+void		rrr(t_stack *a, t_stack *b, t_flags *flags);
 
 //ALGORITHM FUNCTIONS==========================================================
 float		calculate_disorder(t_stack *a);
-void		move_smallest_top(t_stack *a);
+void		move_smallest_top(t_stack *a, t_flags *flags);
 int			smallest_number(t_stack *a);
-void		sort_simple(t_stack *a, t_stack *b);
+void		sort_simple(t_stack *a, t_stack *b, t_flags *flags);
 void		set_index(t_stack *a);
-void		sort_complex(t_stack *a, t_stack *b);
+void		sort_complex(t_stack *a, t_stack *b, t_flags *flags);
 int			ft_sqrt(int n);
-void		sort_medium(t_stack *a, t_stack *b);
-void		move_index_top(t_stack *b);
+void		sort_medium(t_stack *a, t_stack *b, t_flags *flags);
+void		move_index_top(t_stack *b, t_flags *flags);
 int			biggest_index(t_stack *b);
 int			chuck_position(t_stack *a, int min, int max);
 

@@ -6,7 +6,7 @@
 /*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 10:13:13 by dserra-d          #+#    #+#             */
-/*   Updated: 2026/05/26 13:18:43 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/26 13:59:23 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	smallest_number(t_stack *a)
 	return (position);
 }
 
-void	move_smallest_top(t_stack *a)
+void	move_smallest_top(t_stack *a, t_flags *flags)
 {
 	int	i;
 	int	top;
@@ -76,7 +76,7 @@ void	move_smallest_top(t_stack *a)
 	{
 		while (i < top)
 		{
-			ra (a);
+			ra (a, flags);
 			i++;
 		}
 	}
@@ -84,7 +84,7 @@ void	move_smallest_top(t_stack *a)
 	{
 		while (i < a->size - top)
 		{
-			rra (a);
+			rra (a, flags);
 			i++;
 		}
 	}

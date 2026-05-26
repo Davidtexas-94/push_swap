@@ -6,7 +6,7 @@
 /*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:25:04 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/26 13:20:25 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/26 14:01:41 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,20 +60,20 @@ void	execute_strat(t_stack *stack_a, t_stack *stack_b, t_flags *flags)
 	if (is_sorted(stack_a))
 		return ;
 	if (flags->strategy == FLAG_SIMPLE)
-		sort_simple(stack_a, stack_b);
+		sort_simple(stack_a, stack_b, flags);
 	else if (flags->strategy == FLAG_MEDIUM)
-		sort_medium(stack_a, stack_b);
+		sort_medium(stack_a, stack_b, flags);
 	else if (flags->strategy == FLAG_COMPLEX)
-		sort_complex(stack_a, stack_b);
+		sort_complex(stack_a, stack_b, flags);
 	else if (flags->strategy == FLAG_ADAPTIVE)
 	{
 		disorder = calculate_disorder(stack_a);
 		if (disorder < 0.2)
-			sort_simple (stack_a, stack_b);
+			sort_simple (stack_a, stack_b, flags);
 		else if (disorder < 0.5)
-			sort_medium (stack_a, stack_b);
+			sort_medium (stack_a, stack_b, flags);
 		else
-			sort_complex (stack_a, stack_b);
+			sort_complex (stack_a, stack_b, flags);
 	}
 	if (flags->bench == 1)
 		ft_putstr_fd("BENCHMARK MODE ACTIVATED\n", 2);

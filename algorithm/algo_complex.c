@@ -6,7 +6,7 @@
 /*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 09:45:26 by dserra-d          #+#    #+#             */
-/*   Updated: 2026/05/26 10:56:13 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/26 13:59:06 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static	int	get_bits(int max)
 	return (bits);
 }
 
-static	void	radix(t_stack *a, t_stack *b, int bit)
+static	void	radix(t_stack *a, t_stack *b, int bit, t_flags *flags)
 {
 	int	i;
 
@@ -33,16 +33,16 @@ static	void	radix(t_stack *a, t_stack *b, int bit)
 	while (i > 0)
 	{
 		if ((a->top->index >> bit) & 1)
-			ra (a);
+			ra (a, flags);
 		else
-			pb (a, b);
+			pb (a, b, flags);
 		i--;
 	}
 	while (b->size > 0)
-		pa (a, b);
+		pa (a, b, flags);
 }
 
-void	sort_complex(t_stack *a, t_stack *b)
+void	sort_complex(t_stack *a, t_stack *b, t_flags *flags)
 {
 	int	bits;
 	int	max;
@@ -56,7 +56,7 @@ void	sort_complex(t_stack *a, t_stack *b)
 	i = 0;
 	while (i < bits)
 	{
-		radix (a, b, i);
+		radix (a, b, i, flags);
 		i++;
 	}
 }
