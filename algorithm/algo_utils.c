@@ -6,7 +6,7 @@
 /*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 10:13:13 by dserra-d          #+#    #+#             */
-/*   Updated: 2026/05/26 10:52:20 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/26 10:56:51 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,9 +92,9 @@ void	move_smallest_top(t_stack *a)
 
 void	set_index(t_stack *a)
 {
-	int	i;
-	t_node *node;
-	t_node *small;
+	int		i;
+	t_node	*node;
+	t_node	*small;
 
 	i = 0;
 	while (i < a->size)
