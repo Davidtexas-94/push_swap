@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 16:49:08 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/26 14:34:09 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/26 17:35:05 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,11 @@ t_stack		*ft_init_empty(void);
 long long	ft_atol(const char *str);
 void		ft_free_args(char **args);
 int			is_sorted(t_stack *stack);
+
+//MAIN (PUSH_SWAP.C) FUNCTIONS==================================================
+char	**init_program(int argc, char **argv, t_flags *flags, int *size);
+int		setup_stacks(char **args, t_stack **a, t_stack **b, int size);
+void	error(void);
 
 //OPERATIONS FUNCTIONS==========================================================
 void		swap(t_stack *s);
