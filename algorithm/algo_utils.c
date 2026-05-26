@@ -6,7 +6,7 @@
 /*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 10:13:13 by dserra-d          #+#    #+#             */
-/*   Updated: 2026/05/25 15:39:38 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/26 09:34:38 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,5 +87,31 @@ void	move_smallest_top(t_stack *a)
 			rra (a);
 			i++;
 		}
+	}
+}
+
+void	set_index(t_stack *a)
+{
+	int	i;
+	t_node *node;
+	t_node *small;
+
+	i = 0;
+	while (i < a->size)
+	{
+		small = NULL;
+		node = a->top;
+		while (node)
+		{
+			if (node->rank == 0)
+			{
+				if (small == NULL || node->value < small->value)
+					small = node;
+			}
+			node = node->next;
+		}
+		small->index = i;
+		small->rank = 1;
+		i++;
 	}
 }
