@@ -6,7 +6,7 @@
 /*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 09:08:29 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/27 10:51:29 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/27 11:01:41 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static char	*strategy_names(int s)
 
 static void	print_sp(t_flags *flags)
 {
-	ft_putstr_fd("[bench] sa: ", 2),
+	ft_putstr_fd("[bench] sa: ", 2);
 	ft_putnbr_fd(flags->sa, 2);
 	ft_putstr_fd("  sb:", 2);
 	ft_putnbr_fd(flags->sb, 2);

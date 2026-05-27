@@ -6,7 +6,7 @@
 /*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:25:04 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/27 10:54:00 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/27 11:02:44 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,13 +56,12 @@ static	void	adaptive_sort(t_stack *a, t_stack *b, t_flags *flags)
 {
 	float	disorder;
 
-	disorder = calculate_disorder(a);
-	if (disorder < 0.2)
+	if (flags->disorder < 0.2f)
 	{
 		flags->used_strategy = FLAG_SIMPLE;
 		sort_simple(a, b, flags);
 	}
-	else if (disorder < 0.5)
+	else if (flags->disorder < 0.5f)
 	{
 		flags->used_strategy = FLAG_MEDIUM;
 		sort_medium(a, b, flags);
