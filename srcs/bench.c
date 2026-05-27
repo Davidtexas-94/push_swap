@@ -6,7 +6,7 @@
 /*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 09:08:29 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/27 11:01:41 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/27 11:15:53 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 static char	*strategy_names(int s)
 {
 	if (s == FLAG_SIMPLE)
-		return("Simple / O(n^2)");
+		return ("Simple / O(n^2)");
 	if (s == FLAG_MEDIUM)
-		return("Medium / O(n*sqrt(n))");
+		return ("Medium / O(n*sqrt(n))");
 	if (s == FLAG_COMPLEX)
-		return("Complex / O(n log n)");
+		return ("Complex / O(n log n)");
 	return ("Adaptive");
 }
 
@@ -70,18 +70,18 @@ static void	print_disorder(float d)
 	ft_putstr_fd("%\n", 2);
 }
 
-void		print_bench(t_flags *flags)
+void	print_bench(t_flags *flags)
 {
 	int	total;
 
-	total = flags->sa + flags->sb + flags->ss + flags->pa + flags->pb + \
-			flags->ra + flags->rb + flags->rr + flags->rra + flags->rrb + \
-			flags->rrr;
-	ft_putstr_fd("[bench] disorder: ",2);
+	total = flags->sa + flags->sb + flags->ss + flags->pa + flags->pb\
+	+ flags->ra + flags->rb + flags->rr + flags->rra + flags->rrb\
+	+ flags->rrr;
+	ft_putstr_fd("[bench] disorder: ", 2);
 	print_disorder(flags->disorder);
-	ft_putstr_fd("[bench] strategy: ",2);
+	ft_putstr_fd("[bench] strategy: ", 2);
 	ft_putendl_fd(strategy_names(flags->used_strategy), 2);
-	ft_putstr_fd("[bench] total_ops: ",2);
+	ft_putstr_fd("[bench] total_ops: ", 2);
 	ft_putnbr_fd(total, 2);
 	ft_putchar_fd('\n', 2);
 	print_sp(flags);
