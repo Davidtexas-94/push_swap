@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bench.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 09:08:29 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/27 11:15:53 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/27 11:24:18 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	print_sp(t_flags *flags)
 {
 	ft_putstr_fd("[bench] sa: ", 2);
 	ft_putnbr_fd(flags->sa, 2);
-	ft_putstr_fd("  sb:", 2);
+	ft_putstr_fd("  sb: ", 2);
 	ft_putnbr_fd(flags->sb, 2);
 	ft_putstr_fd("  ss: ", 2);
 	ft_putnbr_fd(flags->ss, 2);
@@ -73,10 +73,13 @@ static void	print_disorder(float d)
 void	print_bench(t_flags *flags)
 {
 	int	total;
+	int	rotates;
+	int	reverse;
 
-	total = flags->sa + flags->sb + flags->ss + flags->pa + flags->pb\
-	+ flags->ra + flags->rb + flags->rr + flags->rra + flags->rrb\
-	+ flags->rrr;
+	total = flags->sa + flags->sb + flags->ss + flags->pa + flags->pb;
+	rotates = flags->ra + flags->rb + flags->rr;
+	reverse = flags->rra + flags->rrb + flags->rrr;
+	total = total + rotates + reverse;
 	ft_putstr_fd("[bench] disorder: ", 2);
 	print_disorder(flags->disorder);
 	ft_putstr_fd("[bench] strategy: ", 2);
