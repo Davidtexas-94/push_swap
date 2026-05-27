@@ -6,7 +6,7 @@
 /*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 12:00:05 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/26 17:34:52 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/27 08:00:19 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,9 @@ char	**init_program(int argc, char **argv, t_flags *flags, int *size)
 
 	start_i = get_flag(argc, argv, flags);
 	if (start_i == -1)
-		return (error(), NULL);
+		return (*size = -1, error(), NULL);
 	if (start_i == argc)
-		return (NULL);
+		return (*size = 0, NULL);
 	args = ft_get_args(argc, argv, size, start_i);
 	if (!args)
 		return (error(), NULL);
