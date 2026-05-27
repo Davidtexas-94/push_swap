@@ -6,7 +6,7 @@
 /*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 16:49:08 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/26 17:35:05 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/27 08:37:45 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,37 @@
 //INCLUDES======================================================================
 # include "libft.h"
 
-//DEFINE FLAGS==================================================================
+//MACROS========================================================================
 # define FLAG_ADAPTIVE	0
 # define FLAG_SIMPLE	1
 # define FLAG_MEDIUM	2
 # define FLAG_COMPLEX	3
 
+# define INIT_FLAGS {FLAG_ADAPTIVE, FLAG_ADAPTIVE, 0, 0.0f, \
+						0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+// Se por acaso esse macro for alterado, tudo quebra, tem que seguir exatamente 
+// a struct a baixo (e vice-versa). Uma complementa a outra.
+
 //STRUCTS=======================================================================
+typedef struct s_flags
+{
+	int		strategy;
+	int		used_strategy;
+	int		bench;
+	float	disorder;
+	int		sa;
+	int		sb;
+	int		ss;
+	int		pa;
+	int		pb;
+	int		ra;
+	int		rb;
+	int		rr;
+	int		rra;
+	int		rrb;
+	int		rrr;
+}	t_flags;
+
 typedef struct s_node
 {
 	int				value;
@@ -38,24 +62,6 @@ typedef struct s_stack
 	t_node	*bottom;
 	int		size;
 }	t_stack;
-
-typedef struct s_flags
-{
-	int	strategy;
-	int	used_strategy;
-	int	bench;
-	int	sa;
-	int	sb;
-	int	ss;
-	int	pa;
-	int	pb;
-	int	ra;
-	int	rb;
-	int	rr;
-	int	rra;
-	int	rrb;
-	int	rrr;
-}	t_flags;
 
 typedef struct s_chunk
 {
