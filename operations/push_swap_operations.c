@@ -6,7 +6,7 @@
 /*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 14:02:39 by dserra-d          #+#    #+#             */
-/*   Updated: 2026/05/26 13:41:12 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/27 12:28:20 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	sa(t_stack *a, t_flags *flag)
 	swap (a);
 	if (flag)
 		flag->sa++;
+	// if (flag && flag->count_only)
+    //     return ;
 	write (1, "sa\n", 3);
 }
 
@@ -29,6 +31,8 @@ void	sb(t_stack *b, t_flags *flag)
 	swap (b);
 	if (flag)
 		flag->sb++;
+	// if (flag && flag->count_only)
+    //     return ;
 	write (1, "sb\n", 3);
 }
 
@@ -40,6 +44,8 @@ void	ss(t_stack *a, t_stack *b, t_flags *flag)
 	swap (b);
 	if (flag)
 		flag->ss++;
+	// if (flag && flag->count_only)
+    //     return ;
 	write (1, "ss\n", 3);
 }
 
@@ -68,6 +74,8 @@ void	pa(t_stack *a, t_stack *b, t_flags *flag)
 		a->bottom = first_b;
 	if (flag)
 		flag->pa++;
+	// if (flag && flag->count_only)
+    //     return ;
 	write (1, "pa\n", 3);
 }
 
@@ -96,5 +104,7 @@ void	pb(t_stack *a, t_stack *b, t_flags *flag)
 		b->bottom = first_a;
 	if (flag)
 		flag->pb++;
+	// if (flag && flag->count_only)
+    //     return ;
 	write (1, "pb\n", 3);
 }

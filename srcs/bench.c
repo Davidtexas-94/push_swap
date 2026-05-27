@@ -6,7 +6,7 @@
 /*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 09:08:29 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/27 11:24:18 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/27 12:26:02 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,12 @@ void	print_bench(t_flags *flags)
 	rotates = flags->ra + flags->rb + flags->rr;
 	reverse = flags->rra + flags->rrb + flags->rrr;
 	total = total + rotates + reverse;
+	// if (flags->count_only)
+	// {
+    // 	ft_putnbr_fd(total, 1);
+    // 	ft_putchar_fd('\n', 1);
+	// 	return ;
+	// }
 	ft_putstr_fd("[bench] disorder: ", 2);
 	print_disorder(flags->disorder);
 	ft_putstr_fd("[bench] strategy: ", 2);

@@ -6,7 +6,7 @@
 /*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 15:18:24 by dserra-d          #+#    #+#             */
-/*   Updated: 2026/05/26 14:21:01 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/27 12:27:00 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	ra(t_stack *a, t_flags *flag)
 	rotate (a);
 	if (flag)
 		flag->ra++;
+	// if (flag && flag->count_only)
+    //     return ;
 	write (1, "ra\n", 3);
 }
 
@@ -29,6 +31,8 @@ void	rb(t_stack *b, t_flags *flag)
 	rotate (b);
 	if (flag)
 		flag->rb++;
+	// if (flag && flag->count_only)
+    //     return ;
 	write (1, "rb\n", 3);
 }
 
@@ -40,5 +44,7 @@ void	rr(t_stack *a, t_stack *b, t_flags *flag)
 	rotate (b);
 	if (flag)
 		flag->rr++;
+	// if (flag && flag->count_only)
+    //     return ;
 	write (1, "rr\n", 3);
 }
