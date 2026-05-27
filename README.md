@@ -12,11 +12,10 @@ A sorting algorithm project built in C that sorts a stack of integers using a li
 
 ## Authors
 
-| Login | GitHub |
-|-------|--------|
-| acano-kr | [@acano-kr](https://github.com/XandaoKruger) |
-| dserra-d | [@dserra-d](https://github.com/Davidtexas-94) |
-
+| GitHub |
+|--------|
+| [![GitHub](https://img.shields.io/badge/GitHub-acano--kr-181717?logo=github&logoColor=white)](https://github.com/XandaoKruger) |
+| [![GitHub](https://img.shields.io/badge/GitHub-dserra--d-181717?logo=github&logoColor=white)](https://github.com/Davidtexas-94) |
 
 ---
 
@@ -49,7 +48,7 @@ The program uses two stacks — `a` and `b` — and a set of 11 operations to ma
 
 ```bash
 # Clone the repository
-git clone <https://github.com/Davidtexas-94/push_swap.git>
+git clone https://github.com/Davidtexas-94/push_swap.git
 cd push_swap
 
 # Compile
@@ -147,22 +146,83 @@ shuf -i 0-9999 -n 500 > args.txt && ./push_swap $(cat args.txt) | wc -l
 
 ## Algorithms
 
-> *This section will be completed once all four strategies are fully implemented.*
-
 ### Disorder Metric
 
-Before any moves, the program computes a disorder value between 0 and 1 using the Kendall tau metric — counting inversions (pairs where a larger number appears before a smaller one) divided by the total number of pairs.
+Before any sorting begins, the program computes a disorder value between `0.0` and `1.0` using the **Kendall tau distance**: it counts all inversions (pairs where a larger value appears before a smaller one in the stack) and divides by the total number of pairs. A fully sorted stack yields `0.0`; a fully reversed stack yields `1.0`.
+
+```
+disorder = inversions / total_pairs
+         = inversions / (n * (n - 1) / 2)
+```
+
+This metric is computed in O(n²) before any moves are made and is used exclusively by the adaptive strategy to decide which algorithm to apply.
+
+---
 
 ### Strategies
 
-| Flag | Complexity | Disorder threshold |
-|------|-----------|-------------------|
-| `--simple` | O(n²) | < 0.2 |
-| `--medium` | O(n√n) | 0.2 – 0.5 |
-| `--complex` | O(n log n) | ≥ 0.5 |
-| `--adaptive` | Selects above | automatic |
+| Flag | Algorithm | Complexity | Disorder threshold |
+|------|-----------|-----------|-------------------|
+| `--simple` | Selection sort variant | O(n²) | < 0.2 |
+| `--medium` | Chunk-based sort | O(n√n) | 0.2 – 0.5 |
+| `--complex` | Radix sort | O(n log n) | ≥ 0.5 |
+| `--adaptive` | Selects above automatically | — | automatic |
 
-> Detailed explanation, justification, and complexity arguments for each strategy will be added here.
+---
+
+### `--simple` — Selection Sort (O(n²))
+
+Designed for small or nearly-sorted inputs. For stacks of 2 or 3 elements, it applies a hardcoded sequence of optimal moves derived by exhaustive case analysis. For larger inputs:
+
+1. Find the smallest remaining element in stack `a` using `ra` or `rra` (whichever is shorter).
+2. Push it to stack `b` with `pb`.
+3. Repeat until `a` is empty.
+4. Push everything back to `a` with `pa` — since elements were pushed smallest-first into `b`, they arrive back in sorted order.
+
+This is effectively an O(n²) selection sort: finding and moving each minimum takes up to O(n) rotations, repeated n times.
+
+---
+
+### `--medium` — Chunk Sort (O(n√n))
+
+A divide-and-conquer approach that groups elements by index ranges (chunks) and processes them batch by batch.
+
+1. Assign a normalized index (0 to n-1) to each element based on relative rank.
+2. Compute chunk size as `√n + √n/2`, giving approximately `√n` total chunks.
+3. For each chunk, scan stack `a` and push all elements whose index falls within `[min, max)` to stack `b`, rotating `a` in the cheaper direction (front or back) to reach each target.
+4. Once all elements are in `b`, repeatedly bring the largest remaining index to the top of `b` and push it back to `a`.
+
+The result is a sorted stack `a`. Chunk size is tuned to balance the cost of scanning vs. the number of rounds.
+
+---
+
+### `--complex` — Radix Sort (O(n log n))
+
+A bitwise radix sort operating on the normalized indices of the elements.
+
+1. Assign a normalized index (0 to n-1) to each element, replacing values with their rank.
+2. Determine the number of bits needed to represent the largest index: `bits = ⌊log₂(n-1)⌋ + 1`.
+3. For each bit position (from least significant to most significant):
+   - Iterate through all elements of stack `a`.
+   - If the current bit of the element's index is `1`, rotate it to the bottom with `ra`.
+   - If the bit is `0`, push it to stack `b` with `pb`.
+   - After processing all elements, push everything back from `b` to `a` with `pa`.
+4. After all bit passes, stack `a` is sorted.
+
+Each of the `log₂(n)` passes costs O(n) operations, yielding O(n log n) total.
+
+---
+
+### `--adaptive` — Automatic Strategy Selection
+
+Runs `calculate_disorder` on the input and delegates to one of the three strategies above:
+
+- Stack of 3 or fewer → `--simple` unconditionally
+- Disorder < 0.2 → `--simple` (input is nearly sorted; a few swaps suffice)
+- 0.2 ≤ disorder < 0.5 → `--medium`
+- Disorder ≥ 0.5 → `--complex`
+
+This avoids using an expensive O(n log n) algorithm on an input that's already 90% sorted.
 
 ---
 
@@ -173,21 +233,25 @@ push_swap/
 ├── push_swap.h
 ├── Makefile
 ├── algorithm/
-│   ├── algo_simple.c
-│   └── algo_utils.c
+│   ├── algo_simple.c           # sort_two, sort_three, sort_simple
+│   ├── algo_medium.c           # chunk-based sort
+│   ├── algo_complex.c          # radix sort
+│   ├── algo_utils.c            # disorder metric, index assignment, smallest finder
+│   └── algo_utils2.c           # biggest index, chunk position, move helpers
 ├── operations/
-│   ├── operation_utils.c
-│   ├── push_swap_operations.c
-│   ├── rotate_operations.c
-│   └── reverse_operations.c
+│   ├── operation_utils.c       # swap, rotate, reverse primitives
+│   ├── push_swap_operations.c  # sa, sb, ss, pa, pb
+│   ├── rotate_operations.c     # ra, rb, rr
+│   └── reverse_operations.c    # rra, rrb, rrr
 ├── srcs/
 │   ├── main.c
-│   ├── flags.c
-│   ├── parse.c
-│   ├── stack.c
-│   ├── utils.c
-│   └── push_swap.c
-└── libft/
+│   ├── flags.c                 # flag parsing, strategy dispatch
+│   ├── parse.c                 # input validation and int parsing
+│   ├── stack.c                 # stack init, node creation, free
+│   ├── utils.c                 # ft_atol, is_sorted, ft_free_args
+│   ├── bench.c                 # benchmark output
+│   └── push_swap.c             # init_program, setup_stacks, error
+└── libft/                      # Custom C standard library
 ```
 
 ---
@@ -203,7 +267,7 @@ push_swap/
 
 ### AI Usage
 
-Throughout this project, AI (Claude by Anthropic) was used as a collaborative tool for:
+Throughout this project, AI was used as a collaborative tool for:
 
 - **Architecture decisions** — discussing data structure choices (linked list vs array) and their trade-offs for this specific problem
 - **Debugging** — identifying logic errors in pointer manipulation and stack operations
