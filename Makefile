@@ -23,7 +23,7 @@ FILES +=	${OPER}/push_swap_operations.c ${OPER}/rotate_operations.c \
 			${OPER}/reverse_operations.c ${OPER}/operation_utils.c
 
 #Files inside srcs
-FILES +=	${SRCS}/stack.c ${SRCS}/parse.c ${SRCS}/main.c \
+FILES +=	${SRCS}/stack.c ${SRCS}/parse.c ${SRCS}/main.c ${SRCS}/bench.c\
 			${SRCS}/utils.c ${SRCS}/push_swap.c ${SRCS}/flags.c
 
 all: ${LIBFT} ${NAME}

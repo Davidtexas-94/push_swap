@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   flags.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:25:04 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/26 14:24:18 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/27 08:50:54 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,7 @@ int	get_flag(int argc, char **argv, t_flags *flags)
 {
 	int	i;
 
-	flags->strategy = FLAG_ADAPTIVE;
-	flags->bench = 0;
+	ft_bzero(flags, sizeof(t_flags));
 	i = 1;
 	while (i < argc && ft_strncmp(argv[i], "--", 2) == 0)
 	{

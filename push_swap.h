@@ -6,7 +6,7 @@
 /*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 16:49:08 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/27 08:37:45 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/27 09:01:58 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,29 @@
 //INCLUDES======================================================================
 # include "libft.h"
 
-//MACROS========================================================================
+//DEFINE FLAGS==================================================================
 # define FLAG_ADAPTIVE	0
 # define FLAG_SIMPLE	1
 # define FLAG_MEDIUM	2
 # define FLAG_COMPLEX	3
 
-# define INIT_FLAGS {FLAG_ADAPTIVE, FLAG_ADAPTIVE, 0, 0.0f, \
-						0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
-// Se por acaso esse macro for alterado, tudo quebra, tem que seguir exatamente 
-// a struct a baixo (e vice-versa). Uma complementa a outra.
-
 //STRUCTS=======================================================================
+typedef struct s_node
+{
+	int				value;
+	int				index;
+	int				rank;
+	struct s_node	*next;
+	struct s_node	*prev;
+}	t_node;
+
+typedef struct s_stack
+{
+	t_node	*top;
+	t_node	*bottom;
+	int		size;
+}	t_stack;
+
 typedef struct s_flags
 {
 	int		strategy;
@@ -47,27 +58,14 @@ typedef struct s_flags
 	int		rrr;
 }	t_flags;
 
-typedef struct s_node
-{
-	int				value;
-	int				index;
-	int				rank;
-	struct s_node	*next;
-	struct s_node	*prev;
-}	t_node;
-
-typedef struct s_stack
-{
-	t_node	*top;
-	t_node	*bottom;
-	int		size;
-}	t_stack;
-
 typedef struct s_chunk
 {
 	int	min;
 	int	max;
 }	t_chunk;
+
+//BENCH FUNCTIONS===============================================================
+void		print_bench(t_flags *flags);
 
 //PARSE FUNCTIONS===============================================================
 int			*parse_args(char **args, int count, int *size);
@@ -87,9 +85,9 @@ void		ft_free_args(char **args);
 int			is_sorted(t_stack *stack);
 
 //MAIN (PUSH_SWAP.C) FUNCTIONS==================================================
-char	**init_program(int argc, char **argv, t_flags *flags, int *size);
-int		setup_stacks(char **args, t_stack **a, t_stack **b, int size);
-void	error(void);
+char		**init_program(int argc, char **argv, t_flags *flags, int *size);
+int			setup_stacks(char **args, t_stack **a, t_stack **b, int size);
+void		error(void);
 
 //OPERATIONS FUNCTIONS==========================================================
 void		swap(t_stack *s);
