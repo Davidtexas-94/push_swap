@@ -6,7 +6,7 @@
 /*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:25:04 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/27 08:50:54 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/27 10:54:00 by acano-kr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ void	execute_strat(t_stack *stack_a, t_stack *stack_b, t_flags *flags)
 {
 	if (is_sorted(stack_a))
 		return ;
+	flags->disorder = calculate_disorder(stack_a);
 	if (flags->strategy == FLAG_SIMPLE)
 	{
 		flags->used_strategy = FLAG_SIMPLE;
@@ -96,5 +97,5 @@ void	execute_strat(t_stack *stack_a, t_stack *stack_b, t_flags *flags)
 	else if (flags->strategy == FLAG_ADAPTIVE)
 		adaptive_sort(stack_a, stack_b, flags);
 	if (flags->bench == 1)
-		ft_putstr_fd("BENCHMARK MODE ACTIVATED\n", 2);
+		print_bench(flags);
 }
