@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   flags.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acano-kr <acano-kr@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:25:04 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/27 11:02:44 by acano-kr         ###   ########.fr       */
+/*   Updated: 2026/05/27 11:29:12 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,12 @@ int	get_flag(int argc, char **argv, t_flags *flags)
 
 static	void	adaptive_sort(t_stack *a, t_stack *b, t_flags *flags)
 {
-	float	disorder;
-
+	if (a->size <= 3)
+	{
+		flags->used_strategy = FLAG_SIMPLE;
+		sort_simple(a, b, flags);
+		return ;
+	}
 	if (flags->disorder < 0.2f)
 	{
 		flags->used_strategy = FLAG_SIMPLE;
