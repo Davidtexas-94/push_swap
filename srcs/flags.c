@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   flags.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: dserra-d <dserra-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:25:04 by acano-kr          #+#    #+#             */
-/*   Updated: 2026/05/27 12:28:34 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/28 09:38:48 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,6 @@ int	get_flag(int argc, char **argv, t_flags *flags)
 			flags->strategy = FLAG_MEDIUM;
 		else if (is_flag(argv[i] + 2, "complex"))
 			flags->strategy = FLAG_COMPLEX;
-		// else if (is_flag(argv[i] + 2, "count_only"))
-    	// 	flags->count_only = 1;
 		else
 			return (-1);
 		i++;
@@ -56,7 +54,7 @@ int	get_flag(int argc, char **argv, t_flags *flags)
 
 static	void	adaptive_sort(t_stack *a, t_stack *b, t_flags *flags)
 {
-	if (a->size <= 3)
+	if (a->size <= 5)
 	{
 		flags->used_strategy = FLAG_SIMPLE;
 		sort_simple(a, b, flags);
@@ -103,6 +101,4 @@ void	execute_strat(t_stack *stack_a, t_stack *stack_b, t_flags *flags)
 		adaptive_sort(stack_a, stack_b, flags);
 	if (flags->bench == 1)
 		print_bench(flags);
-	// if (flags->count_only)
-    // 	print_bench(flags);
 }

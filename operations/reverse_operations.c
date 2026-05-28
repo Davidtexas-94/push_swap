@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_operations.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dserra-d <dserra-d@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: dserra-d <dserra-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 15:27:31 by dserra-d          #+#    #+#             */
-/*   Updated: 2026/05/27 12:27:32 by dserra-d         ###   ########.fr       */
+/*   Updated: 2026/05/28 09:39:34 by dserra-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ void	rra(t_stack *a, t_flags *flag)
 	reverse (a);
 	if (flag)
 		flag->rra++;
-	// if (flag && flag->count_only)
-    //     return ;
 	write (1, "rra\n", 4);
 }
 
@@ -31,8 +29,6 @@ void	rrb(t_stack *b, t_flags *flag)
 	reverse (b);
 	if (flag)
 		flag->rrb++;
-	// if (flag && flag->count_only)
-    //     return ;
 	write (1, "rrb\n", 4);
 }
 
@@ -44,7 +40,5 @@ void	rrr(t_stack *a, t_stack *b, t_flags *flag)
 	reverse (b);
 	if (flag)
 		flag->rrr++;
-	// if (flag && flag->count_only)
-    //     return ;
 	write (1, "rrr\n", 4);
 }
